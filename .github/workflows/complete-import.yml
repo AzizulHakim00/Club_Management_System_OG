@@ -1,4 +1,4 @@
-name: Complete validated project import
+name: Build validated JavaFX project
 
 on:
   push:
@@ -10,54 +10,44 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  import-project:
-    if: github.actor != 'github-actions[bot]'
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out validation branch
+      - name: Check out source
         uses: actions/checkout@v4
+
+      - name: Set up Java 21
+        uses: actions/setup-java@v4
         with:
-          ref: import/validated-club-management-system-20260722
-          fetch-depth: 0
+          distribution: temurin
+          java-version: '21'
+          cache: maven
 
-      - name: Reconstruct and verify project package
+      - name: Validate required project files
         shell: bash
         run: |
-          cat \
-            .bootstrap/part-000 \
-            .bootstrap-fix/part-001-* \
-            .bootstrap/part-002 \
-            .bootstrap/part-0030 \
-            .bootstrap/part-0031 \
-            .bootstrap/part-0032 \
-            .bootstrap/part-0040 \
-            .bootstrap/part-0041 \
-            .bootstrap/part-0042 \
-            .bootstrap/part-0050 \
-            > /tmp/project.tar.xz.b64
-          test "$(wc -c < /tmp/project.tar.xz.b64)" -eq 94920
-          base64 --decode /tmp/project.tar.xz.b64 > /tmp/project.tar.xz
-          test "$(wc -c < /tmp/project.tar.xz)" -eq 71188
-          echo "58ef727caaffae1e5635113299edd23e3e8ef6e8448f824b091a55ebbf2047ef  /tmp/project.tar.xz" | sha256sum --check --strict
+          test -f pom.xml
+          test -f database/real.sql
+          test -f src/main/java/com/example/realmadrid/App.java
+          test -f src/main/java/module-info.java
 
-      - name: Replace transfer files with validated source
+      - name: Validate FXML files
         shell: bash
         run: |
-          cp .github/workflows/complete-import.yml /tmp/complete-import.yml
-          find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
-          tar -xJf /tmp/project.tar.xz -C .
-          rm -rf .github
-          mkdir -p .github/workflows
-          cp /tmp/complete-import.yml .github/workflows/complete-import.yml
+          python3 - <<'PY'
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
 
-      - name: Commit validated project
-        shell: bash
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git commit -m "Import validated Real Madrid club management system"
-          git push origin HEAD:import/validated-club-management-system-20260722
+          files = sorted(Path('src/main/resources').rglob('*.fxml'))
+          if not files:
+              raise SystemExit('No FXML files found')
+          for path in files:
+              ET.parse(path)
+          print(f'Validated {len(files)} FXML files')
+          PY
+
+      - name: Build with Maven
+        run: mvn --batch-mode --no-transfer-progress -DskipTests clean package
