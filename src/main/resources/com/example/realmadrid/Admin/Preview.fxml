@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="775.0" prefWidth="690.0" styleClass="main-container" stylesheets="@../Style/MatchPreview.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realmadrid.Controller.Admin.PreviewController">
+    <children>
+
+        <VBox alignment="TOP_CENTER" layoutX="9.0" prefHeight="773.0" prefWidth="799.0" spacing="20" styleClass="main-container" stylesheets="@../Style/MatchPreview.css">
+            <AnchorPane prefHeight="70.0" prefWidth="734.0">
+                <children>
+                    <!-- Header -->
+                    <HBox alignment="CENTER" layoutX="60.0" layoutY="14.0" prefHeight="50.0" prefWidth="732.0" spacing="20" styleClass="score-container">
+                        <ImageView fx:id="team1Logo" fitHeight="50" fitWidth="50">
+                     <image>
+                        <Image url="@../Images/real-madrid-icon-1467x2048-p4mfm7ya.png" />
+                     </image></ImageView>
+                        <Label styleClass="team-label" text="Real Madrid" />
+                        <Label fx:id="myTeamScore" prefHeight="40.0" prefWidth="18.0" styleClass="score-label" text="2" />
+                        <Label layoutX="244.0" layoutY="15.0" prefHeight="40.0" prefWidth="2.0" styleClass="score-label" text="-" />
+                        <Label fx:id="opponentdTeamScore" layoutX="284.0" layoutY="15.0" prefHeight="40.0" prefWidth="7.0" styleClass="score-label" text="2" />
+                        <Label fx:id="opponentTeamLabel" styleClass="team-label" text="Mallorca" />
+                        <ImageView fx:id="team2Logo" fitHeight="50" fitWidth="50">
+                     <image>
+                        <Image url="@../Images/opponentClub.png" />
+                     </image></ImageView>
+                    </HBox>
+                </children>
+                <styleClass>
+                    <String fx:value="anchor-pane" />
+                    <String fx:value="hbox-container" />
+                    <String fx:value="anchor-pane" />
+                </styleClass>
+            </AnchorPane>
+
+            <!-- Video Section -->
+            <VBox alignment="CENTER" fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="214.0" prefWidth="810.0" spacing="8" styleClass="table-view">
+                <padding>
+                    <Insets bottom="10" left="10" right="10" top="10" />
+                </padding>
+                <Label prefHeight="30.0" prefWidth="721.0" styleClass="section-title" text="Match Recap" />
+                <HBox prefHeight="142.0" prefWidth="792.0" styleClass="video-container">
+                    <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                            <children>
+                                <StackPane layoutX="12.0" prefHeight="147.0" prefWidth="228.0">
+                                    <children>
+                                        <ImageView fitHeight="147.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" />
+                                        <Button mnemonicParsing="false">
+                                            <graphic>
+                                                <FontAwesomeIconView fx:id="matchrecapButton01" glyphName="PLAY" />
+                                            </graphic>
+                                        </Button>
+                                    </children>
+                                </StackPane>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
+                            <children>
+                                <StackPane prefHeight="150.0" prefWidth="200.0">
+                                    <children>
+                                        <ImageView fitHeight="125.0" fitWidth="228.0" pickOnBounds="true" preserveRatio="true" />
+                                        <Button mnemonicParsing="false">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="PLAY" />
+                                            </graphic>
+                                        </Button>
+                                    </children>
+                                </StackPane>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="250.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
+                            <children>
+                                <StackPane prefHeight="150.0" prefWidth="200.0">
+                                    <children>
+                                        <ImageView fitHeight="125.0" fitWidth="228.0" pickOnBounds="true" preserveRatio="true" />
+                                        <Button mnemonicParsing="false">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="PLAY" />
+                                            </graphic>
+                                        </Button>
+                                    </children>
+                                </StackPane>
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </HBox>
+            </VBox>
+            <AnchorPane layoutY="31.0" prefHeight="463.0" prefWidth="808.0" styleClass="table-view">
+                <children>
+                    <HBox fx:id="statsGridPlane" alignment="CENTER" layoutX="38.0" layoutY="2.0" prefHeight="40.0" prefWidth="554.0" spacing="50.0" styleClass="column-header-background">
+                        <children>
+                            <ImageView fitHeight="29.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true" />
+                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Stats" wrappingWidth="37.705078125">
+                                <font>
+                                    <Font name="System Bold" size="12.0" />
+                                </font>
+                            </Text>
+                            <ImageView fitHeight="39.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true" styleClass="hbox-container" />
+                        </children>
+                    </HBox>
+
+                    <!-- Stats -->
+                    <GridPane alignment="CENTER" hgap="20" layoutX="41.0" layoutY="33.0" prefHeight="428.0" prefWidth="554.0" styleClass="anchor-pane" vgap="10">
+                        <columnConstraints>
+                            <ColumnConstraints halignment="RIGHT" />
+                            <ColumnConstraints halignment="CENTER" />
+                            <ColumnConstraints halignment="LEFT" />
+                        </columnConstraints>
+
+                        <Label styleClass="stat-label" text="Shots" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <Label fx:id="myteamShot" text="39" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                            <styleClass>
+                                <String fx:value="stat-value" />
+                                <String fx:value="grid-left-cell" />
+                            </styleClass>
+                        </Label>
+                        <Label fx:id="opponentTeamShot" styleClass="stat-value" text="4" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+
+                        <Label text="Shots on target" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="myTeamShotOnTarget" styleClass="grid-left-cell" text="13" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <Label fx:id="opponentTeamShotOnTarget" text="2" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+
+                        <Label text="Possession" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="myTeamPossesion" styleClass="grid-left-cell" text="72%" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <Label fx:id="opponentTeamPossesion" text="28%" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+
+                        <Label text="Passes" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="myTeamPasses" styleClass="grid-left-cell" text="682" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <Label fx:id="opponentTeamPasses" text="280" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+
+                        <Label text="Pass accuracy" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="myTeamPassAccuracy" styleClass="grid-left-cell" text="91%" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                        <Label fx:id="opponentTeamPassAcccuracy" text="76%" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+
+                        <Label text="Fouls" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label fx:id="myTeamfaul" styleClass="grid-left-cell" text="6" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                        <Label fx:id="opponentTeamfaul" text="15" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+
+                        <Label text="Yellow cards" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Label fx:id="myTeamYellowCard" styleClass="grid-left-cell" text="0" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                        <Label fx:id="oppomemtTeamYellowCard" text="3" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+
+                        <Label text="Red cards" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <Label fx:id="myTeamRedCard" styleClass="grid-left-cell" text="0" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                        <Label fx:id="opponentTeamRedCard" text="0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+
+                        <Label text="Offsides" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <Label fx:id="myTeamOffside" styleClass="grid-left-cell" text="1" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+                        <Label fx:id="opponentTeamOffside" text="1" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+
+                        <Label text="Corners" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <Label fx:id="myTeamCorner" styleClass="grid-left-cell" text="28" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+                        <Label fx:id="opponentTeamCorner" text="0" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                        <rowConstraints>
+                            <RowConstraints />
+                            <RowConstraints />
+                            <RowConstraints />
+                            <RowConstraints />
+                            <RowConstraints />
+                            <RowConstraints />
+                            <RowConstraints />
+                            <RowConstraints />
+                            <RowConstraints />
+                            <RowConstraints />
+                        </rowConstraints>
+                    </GridPane>
+               <Button layoutX="644.0" layoutY="199.0" mnemonicParsing="false" text="update" />
+               <Button layoutX="708.0" layoutY="199.0" mnemonicParsing="false" text="delete" />
+               <Button layoutX="598.0" layoutY="199.0" mnemonicParsing="false" text="edit" />
+               <Button layoutX="762.0" layoutY="199.0" mnemonicParsing="false" text="upload" />
+               <AnchorPane layoutX="598.0" layoutY="-1.0" prefHeight="200.0" prefWidth="200.0">
+                  <children>
+                     <StackPane layoutY="35.0" prefHeight="150.0" prefWidth="200.0">
+                        <children>
+                           <ImageView fitHeight="125.0" fitWidth="228.0" pickOnBounds="true" preserveRatio="true" />
+                           <Button mnemonicParsing="false">
+                              <graphic>
+                                 <FontAwesomeIconView glyphName="PLAY" />
+                              </graphic>
+                           </Button>
+                        </children>
+                     </StackPane>
+                  </children>
+               </AnchorPane>
+               <AreaChart layoutX="589.0" layoutY="239.0" prefHeight="227.0" prefWidth="246.0">
+                 <xAxis>
+                   <CategoryAxis side="BOTTOM" />
+                 </xAxis>
+                 <yAxis>
+                   <NumberAxis side="LEFT" />
+                 </yAxis>
+               </AreaChart>
+                </children>
+            </AnchorPane>
+        </VBox>
+    </children>
+</AnchorPane>

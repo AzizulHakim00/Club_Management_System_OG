@@ -1,0 +1,36 @@
+.AnchorPane {
+    -fx-border-color: #0036A7; /* Real Madrid Blue */
+    -fx-border-width: 3px; /* Border width */
+    -fx-border-radius: 10px; /* Rounded corners */
+    -fx-effect: dropshadow(gaussian, #0036A7, 10, 0.0, 0, 5); /* Blue glow effect around the card */
+}
+
+/* Player Name - Real Madrid Blue with Glow Effect */
+/* Player Name (Mbappé) - Real Madrid Blue with White Lighting Effect */
+.player-name {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-fill: #0036A7; /* Real Madrid Blue */
+    -fx-opacity: 1.0; /* Full opacity for stronger visibility */
+    -fx-effect: innershadow(gaussian, #FFFFFF, 15, 0.0, 0.0, 0.0, 8); /* Stronger white lighting effect */
+    -fx-text-alignment: center;
+    -fx-background-color: transparent;
+}
+HBox Label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-fill: #0036A7;  /* Real Madrid Blue */
+}
+
+/* Stats Text (e.g., PAC, SHO, PAS) */
+HBox Text {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-fill: #0036A7;  /* Real Madrid Blue */
+}
+
+/* Line Divider Styling */
+Line {
+    -fx-stroke: #0036A7; /* Real Madrid Blue */
+    -fx-stroke-width: 2;
+}

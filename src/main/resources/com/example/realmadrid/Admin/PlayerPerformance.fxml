@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="623.0" prefWidth="955.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realmadrid.Controller.Admin.PlayerPerFormanceController">
+   <children>
+      <TableView fx:id="table_upper" layoutX="2.0" layoutY="49.0" prefHeight="278.0" prefWidth="950.0">
+        <columns>
+          <TableColumn fx:id="clubname_clm" prefWidth="75.0" text="ClubName" />
+          <TableColumn fx:id="playername_clml" prefWidth="75.0" text="PlayerName" />
+            <TableColumn fx:id="nationality_clm" prefWidth="75.0" text="Nationality" />
+            <TableColumn fx:id="app_laliga" prefWidth="75.0" text="App. laLiga" />
+            <TableColumn fx:id="app_ucl" prefWidth="75.0" text="App. Ucl" />
+            <TableColumn fx:id="app_copa" prefWidth="75.0" text="App.Copa del" />
+            <TableColumn fx:id="app_uefa" prefWidth="75.0" text="App.Uefa" />
+            <TableColumn fx:id="app_cntry" prefWidth="75.0" text="App. Country" />
+            <TableColumn fx:id="average_rating" prefWidth="75.0" text="AverageRating" />
+            <TableColumn fx:id="season_year_clm" prefWidth="75.0" text="SeasorYear" />
+            <TableColumn fx:id="total_goal_clm" prefWidth="75.0" text="totalGoal" />
+            <TableColumn fx:id="total_assist_clm" prefWidth="75.0" text="total Asist" />
+        </columns>
+      </TableView>
+      <TableView fx:id="table_lower" layoutX="1.0" layoutY="358.0" prefHeight="246.0" prefWidth="941.0">
+        <columns>
+          <TableColumn fx:id="llaliga_goal" prefWidth="56.799988746643066" text="la Liga Goal" />
+            <TableColumn fx:id="ucl_gol" prefWidth="83.20000839233398" text="Ucl Goal" />
+            <TableColumn fx:id="copa_del_goal" prefWidth="86.39999389648438" text="Copa Del Goal" />
+            <TableColumn fx:id="uefa_goal" prefWidth="75.0" text="Uefa Goal" />
+            <TableColumn fx:id="coutry_goal" prefWidth="75.0" text="county Goal" />
+            <TableColumn fx:id="laliga_assist" prefWidth="75.0" text="Lalig Assist" />
+            <TableColumn fx:id="ucl_assit" prefWidth="75.0" text="Ucl Assist" />
+            <TableColumn fx:id="cdl_assist" prefWidth="75.0" text="Cdl Assist" />
+            <TableColumn fx:id="super_assist" prefWidth="75.0" text="Super Assist" />
+            <TableColumn fx:id="nationality_assist" prefWidth="45.5999755859375" text="Nations Assist" />
+            <TableColumn fx:id="player_name_2" prefWidth="95.199951171875" text="Name" />
+            <TableColumn fx:id="overall_rating_com" prefWidth="132.7999267578125" text="ratings" />
+        </columns>
+      </TableView>
+      <TextField fx:id="searchbar" layoutX="14.0" layoutY="14.0" prefHeight="26.0" prefWidth="453.0" text="Search" />
+      <Button fx:id="edit_btn" layoutX="859.0" layoutY="14.0" mnemonicParsing="false" text="edit" />
+      <ComboBox fx:id="sort_combo" layoutX="505.0" layoutY="15.0" prefWidth="150.0" promptText="sort" />
+      <ComboBox fx:id="filte_combo" layoutX="688.0" layoutY="15.0" prefWidth="150.0" promptText="filter" />
+   </children>
+</AnchorPane>

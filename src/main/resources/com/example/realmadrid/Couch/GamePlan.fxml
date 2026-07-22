@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realmadrid.Controller.Couch.GamePlan">
+   <VBox alignment="CENTER" fillWidth="false" layoutX="650.0" layoutY="10.0" prefHeight="725.0" prefWidth="247.0" spacing="5.0">
+      <AnchorPane prefHeight="77.0" prefWidth="176.0">
+         <ImageView fitHeight="68.0" fitWidth="228.0" pickOnBounds="true">
+            <image>
+               <Image url="@../Images/stadium.jpeg" />
+            </image>
+         </ImageView>
+         <Label fx:id="venue_level" blendMode="SRC_ATOP" layoutX="5.0" layoutY="6.0" prefHeight="17.0" prefWidth="46.0" style="-fx-text-fill: white;" text="Home">
+            <font>
+               <Font name="Calisto MT" size="12.0" />
+            </font>
+         </Label>
+         <Label fx:id="stadium_level" alignment="CENTER_RIGHT" blendMode="SRC_ATOP" layoutX="79.0" layoutY="6.0" prefHeight="17.0" prefWidth="134.0" style="-fx-text-fill: white;" text="Stadium Name">
+            <font>
+               <Font name="Calisto MT Bold" size="12.0" />
+            </font>
+         </Label>
+         <Text blendMode="SRC_ATOP" fill="WHITE" layoutX="3.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: white;" text="Starting XI">
+            <font>
+               <Font name="Calibri" size="12.0" />
+            </font>
+         </Text>
+         <Label fx:id="club_level" alignment="CENTER_RIGHT" blendMode="SRC_ATOP" contentDisplay="CENTER" layoutX="90.0" layoutY="46.0" prefHeight="17.0" prefWidth="134.0" style="-fx-text-fill: white;" text="Athletico Madrid">
+            <font>
+               <Font name="Arial Black" size="12.0" />
+            </font>
+         </Label>
+         <AnchorPane blendMode="SRC_ATOP" layoutX="66.0" layoutY="28.0" prefHeight="23.0" prefWidth="12.0" />
+         <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="92.0" layoutY="40.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../Images/real-madrid-icon-1467x2048-p4mfm7ya.png" />
+            </image>
+         </ImageView>
+      </AnchorPane>
+      <ListView fx:id="club_player_list" prefHeight="411.0" prefWidth="228.0" />
+      <AnchorPane prefHeight="289.0" prefWidth="196.0" styleClass="AnchorPane" stylesheets="@../Style/PlayerCard.css">
+         <padding>
+            <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+         </padding>
+         <VBox alignment="TOP_RIGHT" fillWidth="true">
+            <StackPane prefHeight="272.0" prefWidth="209.0">
+               <Label fx:id="player_name_lbl" styleClass="player-name" text="Mbappé" StackPane.alignment="BOTTOM_CENTER">
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font>
+               </Label>
+               <ImageView fx:id="fifa_image_view" fitHeight="250.0" fitWidth="199.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="false">
+                  <image>
+                     <Image url="@../Images/download__1_-removebg-preview.png" />
+                  </image>
+                  <StackPane.margin>
+                     <Insets left="10.0" />
+                  </StackPane.margin>
+               </ImageView>
+            </StackPane>
+         </VBox>
+         <HBox alignment="CENTER" layoutY="182.0" prefHeight="68.0" prefWidth="210.0">
+            <AnchorPane prefHeight="84.0" prefWidth="94.0">
+               <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PAC" />
+               <Text layoutX="14.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SHO" />
+               <Text layoutX="14.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PAS" />
+               <Label fx:id="pac_lbl" layoutX="46.0" layoutY="14.0" text="97" />
+               <Label fx:id="shot_lbl" layoutX="46.0" layoutY="34.0" text="93" />
+               <Label fx:id="pass_lbl" layoutX="46.0" layoutY="50.0" text="88" />
+            </AnchorPane>
+            <Line endX="-1.8" endY="2.2" startX="-1.8" startY="57.2" />
+            <AnchorPane prefHeight="84.0" prefWidth="86.0">
+               <Text layoutX="51.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DRI" />
+               <Text layoutX="51.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DEF" />
+               <Text layoutX="51.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PHY" />
+               <Label fx:id="dri_lbl" layoutX="14.0" layoutY="14.0" text="94" />
+               <Label fx:id="def_lbl" layoutX="14.0" layoutY="34.0" text="42" />
+               <Label fx:id="phy_lbl" layoutX="14.0" layoutY="50.0" text="76" />
+            </AnchorPane>
+         </HBox>
+      </AnchorPane>
+   </VBox>
+   <VBox alignment="TOP_CENTER" layoutX="6.0" layoutY="10.0" prefHeight="736.0" prefWidth="652.0" spacing="10.0">
+      <children>
+         <HBox prefHeight="39.0" prefWidth="570.0" spacing="10.0">
+            <children>
+               <AnchorPane prefHeight="34.0" prefWidth="293.0">
+                  <children>
+                     <Text layoutX="91.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                     <ChoiceBox fx:id="choiceBox" layoutX="87.0" layoutY="2.0" prefHeight="26.0" prefWidth="228.0" />
+                     <FontAwesomeIconView glyphName="SHIELD" layoutX="61.0" layoutY="21.0" size="20" />
+                  </children>
+               </AnchorPane>
+               <ChoiceBox fx:id="tournament_choicebox" prefHeight="26.0" prefWidth="186.0" />
+               <AnchorPane prefHeight="34.0" prefWidth="264.0">
+                  <children>
+                     <Text fx:id="playing_style" layoutX="78.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Playing Style" />
+                     <FontAwesomeIconView glyphName="EXCLAMATION" layoutX="57.0" layoutY="22.0" size="20" />
+                  </children>
+               </AnchorPane>
+            </children>
+            <padding>
+               <Insets bottom="2.0" left="5.0" right="5.0" top="2.0" />
+            </padding>
+         </HBox>
+         <AnchorPane>
+            <children>
+               <StackPane>
+                  <children>
+                     <ListView fx:id="streght_list" prefHeight="246.0" prefWidth="323.0" />
+                     <ListView fx:id="weakness_list" layoutX="10.0" layoutY="10.0" prefHeight="246.0" prefWidth="323.0" visible="false" />
+                  </children>
+               </StackPane>
+               <ListView fx:id="playStyle_list" layoutX="326.0" prefHeight="247.0" prefWidth="323.0" />
+            </children>
+         </AnchorPane>
+         <AnchorPane prefHeight="46.0" prefWidth="636.0">
+            <children>
+               <Button fx:id="touches_btn" layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#touches_btn_event" text="Touches" />
+               <Button fx:id="shot_btn" layoutX="79.0" layoutY="11.0" mnemonicParsing="false" onAction="#shot_btn_event" prefHeight="25.0" prefWidth="54.0" text="Shots" />
+               <Button fx:id="for_btn" layoutX="140.0" layoutY="11.0" mnemonicParsing="false" onAction="#for_btn_event" prefHeight="25.0" prefWidth="54.0" text="For" />
+               <Button fx:id="agaits_btn" layoutX="199.0" layoutY="11.0" mnemonicParsing="false" onAction="#againts_btn_event" prefHeight="25.0" prefWidth="63.0" text="Againts" />
+               <Label layoutX="376.0" layoutY="11.0" prefHeight="25.0" prefWidth="161.0" text="Team Formation DEFAULT" />
+               <Label layoutX="541.0" layoutY="16.0" prefHeight="18.0" prefWidth="94.0" text="4-3-3" />
+            </children>
+         </AnchorPane>
+         <HBox prefHeight="376.0" prefWidth="636.0">
+            <children>
+               <StackPane>
+                  <children>
+                     <VBox fx:id="for_shots_vbox" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="376.0" prefWidth="242.0" spacing="2.0" visible="false">
+                        <children>
+                           <Label text="Shot Directions" />
+                           <AnchorPane prefHeight="103.0" prefWidth="206.0">
+                              <children>
+                                 <AnchorPane layoutX="8.0" layoutY="5.0" prefHeight="146.0" prefWidth="237.0">
+                                    <children>
+                                       <HBox alignment="CENTER" layoutX="-1.0" prefHeight="156.0" prefWidth="237.0" style="-fx-background-color: gray;">
+                                          <children>
+                                             <VBox alignment="CENTER_RIGHT" prefHeight="156.0" prefWidth="80.0" spacing="30.0">
+                                                <children>
+                                                   <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Left Side">
+                                                      <font>
+                                                         <Font name="Calibri" size="12.0" />
+                                                      </font>
+                                                   </Text>
+                                                   <Text fill="WHITE" layoutX="12.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Middle">
+                                                      <font>
+                                                         <Font name="Calibri" size="12.0" />
+                                                      </font>
+                                                   </Text>
+                                                   <Text fill="WHITE" layoutX="12.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Right Side">
+                                                      <font>
+                                                         <Font name="Calibri" size="12.0" />
+                                                      </font>
+                                                   </Text>
+                                                </children>
+                                             </VBox>
+                                             <VBox alignment="CENTER" prefHeight="156.0" prefWidth="66.0" spacing="13.0" style="-fx-background-color: gray;">
+                                                <children>
+                                                   <Label fx:id="for_shot_left" text="42%" textFill="WHITE">
+                                                      <font>
+                                                         <Font size="20.0" />
+                                                      </font>
+                                                   </Label>
+                                                   <Label fx:id="for_shot_middle" layoutX="10.0" layoutY="10.0" text="42%" textFill="WHITE">
+                                                      <font>
+                                                         <Font size="20.0" />
+                                                      </font>
+                                                   </Label>
+                                                   <Label fx:id="for_shot_right" layoutX="10.0" layoutY="45.0" text="42%" textFill="WHITE">
+                                                      <font>
+                                                         <Font size="20.0" />
+                                                      </font>
+                                                   </Label>
+                                                </children>
+                                             </VBox>
+                                             <VBox alignment="CENTER_LEFT" prefHeight="127.0" prefWidth="94.0" spacing="5.0">
+                                                <children>
+                                                   <ImageView fitHeight="44.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" rotate="31.0">
+                                                      <image>
+                                                         <Image url="@../Images/orange-sticker-arrow-1-cover-removebg-preview.png" />
+                                                      </image>
+                                                   </ImageView>
+                                                   <ImageView fitHeight="87.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                                      <image>
+                                                         <Image url="@../Images/1672881-small-removebg-preview.png" />
+                                                      </image>
+                                                   </ImageView>
+                                                   <ImageView fitHeight="47.0" fitWidth="42.0" layoutX="38.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" rotate="-42.0">
+                                                      <image>
+                                                         <Image url="@../Images/orange-sticker-arrow-1-cover-removebg-preview.png" />
+                                                      </image>
+                                                   </ImageView>
+                                                </children>
+                                             </VBox>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </AnchorPane>
+                                 <ImageView blendMode="SCREEN" fitHeight="159.0" fitWidth="230.0" layoutX="13.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../Images/football-pitch-known-foot-ball-260nw-2232863859.jpg" />
+                                    </image>
+                                 </ImageView>
+                              </children>
+                           </AnchorPane>
+                           <Label text="Shot Zones" />
+                           <AnchorPane layoutX="10.0" layoutY="27.0" prefHeight="165.0" prefWidth="245.0" style="-fx-background-color: gray;">
+                              <children>
+                                 <AnchorPane layoutX="12.0" layoutY="21.0" prefHeight="139.0" prefWidth="208.0" style="-fx-background-color: gray;">
+                                    <children>
+                                       <AnchorPane prefHeight="137.0" prefWidth="161.0" style="-fx-background-color: orange;">
+                                          <children>
+                                             <Text fill="WHITE" layoutX="52.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="in 6 Yads Box" wrappingWidth="94.0" />
+                                             <Text fill="WHITE" layoutX="57.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="in 18 Yads Box" wrappingWidth="85.0" />
+                                             <Text fill="WHITE" layoutX="77.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="outside of Box" wrappingWidth="81.0" />
+                                             <Label fx:id="for_shot_zone_outside" layoutX="50.0" layoutY="89.0" prefHeight="30.0" prefWidth="25.0" text="35%" textFill="WHITE">
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </AnchorPane>
+                                       <AnchorPane layoutY="18.0" prefHeight="103.0" prefWidth="25.0" style="-fx-background-color: gray;">
+                                          <children>
+                                             <Label fx:id="for_shot_zone_middle" layoutX="22.0" layoutY="34.0" prefHeight="30.0" prefWidth="25.0" text="57%" textFill="WHITE">
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </AnchorPane>
+                                       <AnchorPane layoutX="1.0" layoutY="45.0" prefHeight="46.0" prefWidth="17.0" style="-fx-background-color: black;">
+                                          <children>
+                                             <Label fx:id="for_shot_zones_small" layoutX="2.0" text="8%" textFill="WHITE">
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </AnchorPane>
+                                    </children>
+                                 </AnchorPane>
+                                 <ImageView blendMode="SCREEN" fitHeight="156.0" fitWidth="247.0" layoutX="-1.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../Images/football-pitch-known-foot-ball-260nw-2232863859.jpg" />
+                                    </image>
+                                 </ImageView>
+                              </children>
+                           </AnchorPane>
+                        </children>
+                        <padding>
+                           <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                        </padding>
+                     </VBox>
+                     <VBox fx:id="touches_vBox" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="376.0" prefWidth="242.0" spacing="2.0">
+                        <children>
+                           <Label text="Attack Sides" />
+                           <AnchorPane prefHeight="103.0" prefWidth="206.0">
+                              <children>
+                                 <AnchorPane layoutX="8.0" layoutY="5.0" prefHeight="146.0" prefWidth="237.0">
+                                    <children>
+                                       <HBox prefHeight="156.0" prefWidth="237.0" style="-fx-background-color: gray;">
+                                          <children>
+                                             <VBox alignment="CENTER" prefHeight="156.0" prefWidth="61.0" spacing="30.0">
+                                                <children>
+                                                   <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Left Side">
+                                                      <font>
+                                                         <Font name="Calibri" size="12.0" />
+                                                      </font>
+                                                   </Text>
+                                                   <Text fill="WHITE" layoutX="12.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Middle">
+                                                      <font>
+                                                         <Font name="Calibri" size="12.0" />
+                                                      </font>
+                                                   </Text>
+                                                   <Text fill="WHITE" layoutX="12.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Right Side">
+                                                      <font>
+                                                         <Font name="Calibri" size="12.0" />
+                                                      </font>
+                                                   </Text>
+                                                </children>
+                                                <HBox.margin>
+                                                   <Insets left="10.0" />
+                                                </HBox.margin>
+                                             </VBox>
+                                             <VBox alignment="CENTER" prefHeight="139.0" prefWidth="43.0" spacing="17.0">
+                                                <children>
+                                                   <Label fx:id="touches_left_side_lbl" text="42%" textFill="#fffefd">
+                                                      <font>
+                                                         <Font name="Arial" size="20.0" />
+                                                      </font>
+                                                   </Label>
+                                                   <Label fx:id="touches_middle_lbl" layoutX="10.0" layoutY="10.0" text="42%" textFill="WHITE">
+                                                      <font>
+                                                         <Font name="Arial" size="20.0" />
+                                                      </font>
+                                                   </Label>
+                                                   <Label fx:id="touches_right_lbl" layoutX="10.0" layoutY="45.0" text="42%" textFill="#fffffe">
+                                                      <font>
+                                                         <Font size="20.0" />
+                                                      </font>
+                                                   </Label>
+                                                </children>
+                                             </VBox>
+                                             <VBox alignment="CENTER_LEFT" prefHeight="127.0" prefWidth="94.0" spacing="18.0">
+                                                <children>
+                                                   <ImageView fitHeight="33.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+                                                      <image>
+                                                         <Image url="@../Images/1672881-small-removebg-preview.png" />
+                                                      </image>
+                                                   </ImageView>
+                                                   <ImageView fitHeight="22.0" fitWidth="54.0" layoutX="10.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+                                                      <image>
+                                                         <Image url="@../Images/1672881-small-removebg-preview.png" />
+                                                      </image>
+                                                   </ImageView>
+                                                   <ImageView fitHeight="32.0" fitWidth="58.0" layoutX="10.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
+                                                      <image>
+                                                         <Image url="@../Images/1672881-small-removebg-preview.png" />
+                                                      </image>
+                                                   </ImageView>
+                                                </children>
+                                             </VBox>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </AnchorPane>
+                                 <ImageView blendMode="SCREEN" fitHeight="159.0" fitWidth="239.0" layoutX="6.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../Images/football-pitch-known-foot-ball-260nw-2232863859.jpg" />
+                                    </image>
+                                 </ImageView>
+                              </children>
+                           </AnchorPane>
+                           <Label text="Action Zones" />
+                           <AnchorPane layoutX="10.0" layoutY="27.0" prefHeight="165.0" prefWidth="245.0">
+                              <children>
+                                 <HBox alignment="CENTER" layoutX="2.0" layoutY="6.0" prefHeight="159.0" prefWidth="245.0">
+                                    <children>
+                                       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: gray;" />
+                                       <AnchorPane layoutX="26.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: orange;" />
+                                       <AnchorPane layoutX="125.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: gray;" />
+                                    </children>
+                                 </HBox>
+                                 <ImageView blendMode="SCREEN" fitHeight="159.0" fitWidth="237.0" layoutX="6.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../Images/football-pitch-known-foot-ball-260nw-2232863859.jpg" />
+                                    </image>
+                                 </ImageView>
+                                 <Label fx:id="touchs_own_third_lbl" layoutX="30.0" layoutY="72.0" text="27%" textFill="WHITE">
+                                    <font>
+                                       <Font name="Arial Bold" size="25.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="touches_middle_thild_lbl" layoutX="103.0" layoutY="69.0" text="27%" textFill="WHITE">
+                                    <font>
+                                       <Font name="Arial Bold" size="25.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="touches_opponent_side_lbl" layoutX="172.0" layoutY="70.0" text="27%" textFill="WHITE">
+                                    <font>
+                                       <Font name="Arial Bold" size="25.0" />
+                                    </font>
+                                 </Label>
+                                 <Text fill="WHITE" layoutX="17.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Own Third" />
+                                 <Text fill="WHITE" layoutX="90.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Middle Third" />
+                                 <Text fill="WHITE" layoutX="164.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O.nent Third" wrappingWidth="70.0" />
+                              </children>
+                           </AnchorPane>
+                        </children>
+                        <padding>
+                           <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                        </padding>
+                     </VBox>
+                     <VBox fx:id="againts_vBox" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="376.0" prefWidth="242.0" spacing="2.0">
+                        <children>
+                           <Label />
+                           <AnchorPane prefHeight="103.0" prefWidth="206.0">
+                              <children>
+                                 <AnchorPane layoutX="8.0" layoutY="5.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="146.0" prefWidth="237.0">
+                                    <children>
+                                       <HBox alignment="CENTER" layoutX="-1.0" prefHeight="156.0" prefWidth="237.0" style="-fx-background-color: gray;">
+                                          <children>
+                                             <VBox alignment="CENTER_RIGHT" prefHeight="156.0" prefWidth="80.0" spacing="30.0">
+                                                <children>
+                                                   <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Right Side">
+                                                      <font>
+                                                         <Font name="Calibri" size="12.0" />
+                                                      </font>
+                                                   </Text>
+                                                   <Text fill="WHITE" layoutX="12.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Middle">
+                                                      <font>
+                                                         <Font name="Calibri" size="12.0" />
+                                                      </font>
+                                                   </Text>
+                                                   <Text fill="WHITE" layoutX="12.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Left Side">
+                                                      <font>
+                                                         <Font name="Calibri" size="12.0" />
+                                                      </font>
+                                                   </Text>
+                                                </children>
+                                             </VBox>
+                                             <VBox alignment="CENTER" prefHeight="156.0" prefWidth="66.0" spacing="13.0" style="-fx-background-color: gray;">
+                                                <children>
+                                                   <Label fx:id="againts_shot_drection_right" text="42%" textFill="WHITE">
+                                                      <font>
+                                                         <Font size="20.0" />
+                                                      </font>
+                                                   </Label>
+                                                   <Label fx:id="againts_shot_direction_middle" layoutX="10.0" layoutY="10.0" text="42%" textFill="WHITE">
+                                                      <font>
+                                                         <Font size="20.0" />
+                                                      </font>
+                                                   </Label>
+                                                   <Label fx:id="againts_shot_direction_left" layoutX="10.0" layoutY="45.0" text="42%" textFill="WHITE">
+                                                      <font>
+                                                         <Font size="20.0" />
+                                                      </font>
+                                                   </Label>
+                                                </children>
+                                             </VBox>
+                                             <VBox alignment="CENTER_LEFT" blendMode="SCREEN" prefHeight="127.0" prefWidth="94.0" spacing="5.0">
+                                                <children>
+                                                   <ImageView blendMode="SCREEN" fitHeight="44.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" rotate="-154.7">
+                                                      <image>
+                                                         <Image url="@../Images/orange-sticker-arrow-1-cover-removebg-preview.png" />
+                                                      </image>
+                                                   </ImageView>
+                                                   <ImageView blendMode="SCREEN" fitHeight="87.0" fitWidth="41.0" opacity="0.35" pickOnBounds="true" preserveRatio="true" rotate="-178.2">
+                                                      <image>
+                                                         <Image url="@../Images/1672881-small-removebg-preview.png" />
+                                                      </image>
+                                                   </ImageView>
+                                                   <ImageView blendMode="SCREEN" fitHeight="47.0" fitWidth="42.0" layoutX="38.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" rotate="145.2">
+                                                      <image>
+                                                         <Image url="@../Images/orange-sticker-arrow-1-cover-removebg-preview.png" />
+                                                      </image>
+                                                   </ImageView>
+                                                </children>
+                                             </VBox>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </AnchorPane>
+                                 <ImageView blendMode="SCREEN" fitHeight="159.0" fitWidth="230.0" layoutX="12.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../Images/football-pitch-known-foot-ball-260nw-2232863859.jpg" />
+                                    </image>
+                                 </ImageView>
+                              </children>
+                           </AnchorPane>
+                           <Label text="Shot Zones" />
+                           <AnchorPane layoutX="10.0" layoutY="27.0" prefHeight="165.0" prefWidth="245.0" style="-fx-background-color: gray;">
+                              <children>
+                                 <AnchorPane layoutX="12.0" layoutY="21.0" prefHeight="139.0" prefWidth="208.0" style="-fx-background-color: gray;">
+                                    <children>
+                                       <AnchorPane prefHeight="137.0" prefWidth="161.0" style="-fx-background-color: AAAAAA;">
+                                          <children>
+                                             <Text fill="WHITE" layoutX="52.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="in 6 Yads Box" wrappingWidth="94.0" />
+                                             <Text fill="WHITE" layoutX="57.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="in 18 Yads Box" wrappingWidth="85.0" />
+                                             <Text fill="WHITE" layoutX="77.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="outside of Box" wrappingWidth="81.0" />
+                                             <Label fx:id="againts_shot_zone_outside" layoutX="50.0" layoutY="89.0" prefHeight="30.0" prefWidth="25.0" text="35%" textFill="WHITE">
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </AnchorPane>
+                                       <AnchorPane layoutY="18.0" prefHeight="103.0" prefWidth="25.0" style="-fx-background-color: gray;">
+                                          <children>
+                                             <Label fx:id="againts_shot_zones_middle" layoutX="22.0" layoutY="34.0" prefHeight="30.0" prefWidth="25.0" text="57%" textFill="WHITE">
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </AnchorPane>
+                                       <AnchorPane layoutX="1.0" layoutY="45.0" prefHeight="46.0" prefWidth="17.0" style="-fx-background-color: black;">
+                                          <children>
+                                             <Label fx:id="againts_shot_zone_small" layoutX="2.0" text="8%" textFill="WHITE">
+                                                <font>
+                                                   <Font name="System Bold" size="12.0" />
+                                                </font>
+                                             </Label>
+                                          </children>
+                                       </AnchorPane>
+                                    </children>
+                                 </AnchorPane>
+                                 <ImageView blendMode="SCREEN" fitHeight="156.0" fitWidth="247.0" layoutX="-1.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../Images/football-pitch-known-foot-ball-260nw-2232863859.jpg" />
+                                    </image>
+                                 </ImageView>
+                              </children>
+                           </AnchorPane>
+                        </children>
+                        <padding>
+                           <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                        </padding>
+                     </VBox>
+                  </children>
+               </StackPane>
+               <AnchorPane prefHeight="376.0" prefWidth="381.0">
+                  <children>
+                     <ImageView fx:id="formation_image" fitHeight="369.0" fitWidth="347.0" layoutX="22.0" layoutY="8.0" pickOnBounds="true">
+                        <image>
+                           <Image url="@../Images/4-3-3-attacking.jpg" />
+                        </image>
+                     </ImageView>
+                  </children>
+               </AnchorPane>
+            </children>
+         </HBox>
+      </children>
+   </VBox>
+</AnchorPane>

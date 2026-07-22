@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="10" stylesheets="@../../Style/TransferpopUp/TransferAllPlayer.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realmadrid.Couch.transferallpopup.PlayerStatusPopupController">
+
+    <padding>
+        <Insets bottom="15" left="15" right="15" top="15" />
+    </padding>
+
+    <HBox>
+        <Label prefHeight="15.0" prefWidth="141.0" styleClass="popup-label-title" text="Player Name:" />
+        <Label fx:id="playerNameLabel" prefHeight="32.0" prefWidth="289.0" styleClass="popup-label-value" />
+    </HBox>
+
+    <HBox styleClass="label">
+        <Label prefHeight="15.0" prefWidth="107.0" styleClass="popup-label-title" text="Salary:" />
+        <Label fx:id="salaryLabel" prefHeight="18.0" prefWidth="306.0" styleClass="popup-label-value" />
+    </HBox>
+
+    <HBox>
+        <Label prefHeight="15.0" prefWidth="127.0" styleClass="popup-label-title" text="Joining Date:" />
+        <Label fx:id="joiningDateLabel" prefHeight="18.0" prefWidth="300.0" styleClass="popup-label-value" />
+    </HBox>
+
+    <HBox>
+        <Label prefHeight="15.0" prefWidth="136.0" styleClass="popup-label-title" text="Leaving Date:" />
+        <Label fx:id="leavingDateLabel" prefHeight="18.0" prefWidth="281.0" styleClass="popup-label-value" />
+    </HBox>
+
+    <HBox>
+        <Label prefHeight="15.0" prefWidth="136.0" styleClass="popup-label-title" text="Player Bonus:" />
+        <Label fx:id="bonusLabel" prefHeight="18.0" prefWidth="295.0">
+         <styleClass>
+            <String fx:value="popup-label-value" />
+            <String fx:value="label" />
+         </styleClass></Label>
+    </HBox>
+   <styleClass>
+      <String fx:value="popup-root" />
+      <String fx:value="image-view" />
+   </styleClass>
+
+</VBox>

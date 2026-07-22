@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="180.0" styleClass="main_menu_container" stylesheets="@../Style/ClientMenu.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realmadrid.Controller.Couch.CouchMenuController">
+   <AnchorPane prefHeight="730.0" prefWidth="160.0" styleClass="left_container">
+      <VBox prefHeight="80.0" prefWidth="160.0" styleClass="title_container" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <ImageView fitHeight="40.0" fitWidth="40.0" preserveRatio="true">
+            <image>
+               <Image url="@../Images/real-madrid-icon-1467x2048-p4mfm7ya.png" />
+            </image>
+         </ImageView>
+
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="logo_text" text="Real Madrid" />
+      </VBox>
+      <VBox layoutX="31.0" layoutY="40.0" prefHeight="400.0" prefWidth="160.0" styleClass="menu_container" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+         <Button fx:id="dassboard_btn" mnemonicParsing="false" text="DashBoard">
+            <graphic>
+               <FontAwesomeIconView glyphName="HOME" size="20" />
+            </graphic>
+         </Button>
+         <Button fx:id="gamePlan_btn" mnemonicParsing="false" text="Game Plan">
+            <graphic>
+               <FontAwesomeIconView glyphName="SITEMAP" size="20" />
+            </graphic>
+         </Button>
+         <Button fx:id="formation_btn" mnemonicParsing="false" text="Formation">
+            <graphic>
+               <FontAwesomeIconView glyphName="TH" size="20" />
+            </graphic>
+         </Button>
+         <Button fx:id="transfer_window_btn" layoutX="30.0" layoutY="140.0" mnemonicParsing="false" text="Transfer Window">
+            <graphic>
+               <FontAwesomeIconView glyphName="EXCHANGE" size="20" wrappingWidth="14.400023460388184" />
+            </graphic>
+         </Button>
+         <Button fx:id="Training_btn" layoutX="30.0" layoutY="182.0" mnemonicParsing="false" text="Training">
+            <graphic>
+               <FontAwesomeIconView glyphName="BULLSEYE" size="20" />
+            </graphic>
+         </Button>
+         <Line endX="120.0" />
+         <Button fx:id="myContact_btn" mnemonicParsing="false" styleClass="alt_menu_btn" text="My Contact">
+            <graphic>
+               <FontAwesomeIconView glyphName="HANDSHAKE_ALT" size="20" />
+            </graphic>
+         </Button>
+         <Button fx:id="couch_profile_btn" layoutX="30.0" layoutY="221.0" mnemonicParsing="false" styleClass="alt_menu_btn" text="Profile">
+            <graphic>
+               <FontAwesomeIconView glyphName="USER" size="20" />
+            </graphic>
+         </Button>
+         <Button fx:id="logout_btn" mnemonicParsing="false" styleClass="alt_menu_btn" text="Logout">
+            <graphic>
+               <FontAwesomeIconView glyphName="EXTERNAL_LINK" size="20" />
+            </graphic>
+         </Button>
+      </VBox>
+      <VBox layoutX="25.0" layoutY="610.0" prefHeight="120.0" prefWidth="130.0" styleClass="report_container" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Report BUg" />
+         <Label text="Use this to report any errors ..." />
+         <Button fx:id="report_btn" mnemonicParsing="false" text="Button">
+            <graphic>
+               <FontAwesomeIconView glyphName="PLUS" />
+            </graphic>
+         </Button>
+      </VBox>
+   </AnchorPane>
+</VBox>

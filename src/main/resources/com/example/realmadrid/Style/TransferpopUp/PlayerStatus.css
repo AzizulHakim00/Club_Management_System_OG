@@ -1,0 +1,72 @@
+/* Root pane of full FXML layout */
+.root {
+    -fx-pref-width: 750px;   /* Preferred width 750 */
+    -fx-max-width: 750px;    /* Max width 750 */
+    -fx-min-width: 750px;    /* Min width 750 to keep fixed width */
+    -fx-padding: 15px;
+    -fx-background-color: #f9f9f9; /* light subtle background */
+    -fx-font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* For popup FXML root pane, use a smaller width */
+.popup-root {
+    -fx-pref-width: 400px;   /* Preferred width smaller for popup */
+    -fx-max-width: 400px;
+    -fx-min-width: 400px;
+    -fx-padding: 10px;
+    -fx-background-color: #ffffff; /* clean white */
+    -fx-font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    -fx-border-color: #ccc;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0, 0, 1);
+}
+
+/* Styling TextFields, DatePickers, TextAreas */
+.text-field, .date-picker, .text-area {
+    -fx-pref-width: 100%;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+    -fx-border-color: #bbb;
+    -fx-padding: 6 8 6 8;
+    -fx-font-size: 13px;
+    -fx-focus-color: #4a90e2;
+}
+
+/* Buttons styling */
+.button {
+    -fx-background-color: #4a90e2;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 16 8 16;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+    -fx-font-size: 14px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 1, 0, 0, 1);
+}
+
+.button:hover {
+    -fx-background-color: #357ABD;
+}
+
+/* Labels */
+.label {
+    -fx-font-weight: semi-bold;
+    -fx-font-size: 14px;
+    -fx-text-fill: #333;
+}
+
+/* ScrollPane if you have one */
+.scroll-pane {
+    -fx-background: transparent;
+    -fx-padding: 0;
+}
+
+/* TextArea for medicalDescriptionArea */
+.text-area {
+    -fx-pref-height: 80px;
+    -fx-wrap-text: true;
+}
+
+/* You can add more styling based on your needs */

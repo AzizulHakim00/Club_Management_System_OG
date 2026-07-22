@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="552.0" prefWidth="801.0" stylesheets="@../Style/DashBoard.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realmadrid.Controller.Admin.AdminDashBoardController">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="750.0" prefWidth="900.0" styleClass="dashboard" stylesheets="@../Style/DashBoard.css">
+         <children>
+            <Text fx:id="user_name" layoutX="14.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="user_name" text="Hi , Azizul" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="30.0" />
+            <Label fx:id="login_date" layoutX="14.0" layoutY="6.0" styleClass="date_lbl" text="Today, 2022-03-12" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="27.0" />
+            <Text layoutX="749.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="Account Samary" AnchorPane.rightAnchor="15.866806030273438" AnchorPane.topAnchor="72.40000057220459" />
+            <Text layoutX="20.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="Last Five Match" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="81.40000057220459" />
+            <HBox layoutX="12.0" layoutY="107.0" prefHeight="142.0" prefWidth="881.0" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="107.0">
+               <children>
+                  <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="119.0" prefWidth="191.0">
+                     <styleClass>
+                        <String fx:value="team" />
+                        <String fx:value="team_gradient" />
+                     </styleClass>
+                     <children>
+                        <Button fx:id="onAllMatch_btn" mnemonicParsing="false" prefHeight="122.0" prefWidth="202.0" />
+                        <Label fx:id="win_lbl" layoutX="6.0" layoutY="29.0" prefHeight="68.0" prefWidth="68.0" text="3" textFill="#fff6f6">
+                           <font>
+                              <Font name="Arial Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="loss_lbl" layoutX="59.0" layoutY="29.0" prefHeight="68.0" prefWidth="68.0" text="1" textFill="#fff6f6">
+                           <font>
+                              <Font name="Arial Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="draw_lbl" layoutX="127.0" layoutY="29.0" prefHeight="68.0" prefWidth="68.0" text="1" textFill="#fff6f6">
+                           <font>
+                              <Font name="Arial Bold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="259.0" layoutY="20.0" prefHeight="119.0" prefWidth="191.0">
+                     <styleClass>
+                        <String fx:value="team" />
+                        <String fx:value="team_gradient" />
+                     </styleClass>
+                     <children>
+                        <Button fx:id="onTransfer_window_btn" mnemonicParsing="false" prefHeight="122.0" prefWidth="202.0" />
+                        <Label fx:id="onsell_lbl" layoutX="6.0" layoutY="29.0" prefHeight="68.0" prefWidth="97.0" text="Rodrygo" textFill="#fff6f6">
+                           <font>
+                              <Font name="Arial Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="on_loan_lbl" layoutX="120.0" layoutY="29.0" prefHeight="68.0" prefWidth="68.0" text="Joselo" textFill="#fff6f6">
+                           <font>
+                              <Font name="Arial Bold" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="546.0" layoutY="20.0" prefHeight="119.0" prefWidth="191.0">
+                     <styleClass>
+                        <String fx:value="team" />
+                        <String fx:value="team_gradient" />
+                     </styleClass>
+                     <children>
+                        <Button fx:id="onPlayer_status_btn" mnemonicParsing="false" prefHeight="122.0" prefWidth="202.0" />
+                        <Label fx:id="injured_player_staus_lbl" layoutX="6.0" layoutY="29.0" prefHeight="68.0" prefWidth="186.0" text="Cavajal - Benzema - Luka" textFill="#fff6f6">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <VBox prefHeight="127.0" prefWidth="170.0" styleClass="acc_summary_container">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Budjet" />
+                        <Label fx:id="club_budjet_lbl" styleClass="income_amount" text="+ $400000000" />
+                        <Line endX="160.0" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trasfer Budjet" />
+                        <Label fx:id="club_transfer_budjet_lbl" styleClass="expense_amount" text="+$10000000" />
+                     </children>
+                  </VBox>
+               </children>
+               <styleClass>
+                  <String fx:value="account_view" />
+                  <String fx:value="team_view" />
+               </styleClass>
+            </HBox>
+            <Text layoutX="23.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="transaction History" AnchorPane.leftAnchor="23.0" AnchorPane.topAnchor="288.4000005722046" />
+            <ListView fx:id="latest_match_list" layoutX="23.2" layoutY="276.0" prefHeight="421.0" prefWidth="543.0" styleClass="recent_listview" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="23.0" />
+            <AnchorPane layoutX="150.0" layoutY="44.0" prefHeight="68.0" prefWidth="574.0">
+               <styleClass>
+                  <String fx:value="account" />
+                  <String fx:value="account_gradient" />
+               </styleClass>
+            </AnchorPane>
+            <VBox layoutX="593.0" layoutY="289.0" prefHeight="448.0" prefWidth="306.0" styleClass="new_trans_container">
+               <children>
+                  <Label text="Address" />
+                  <TextField fx:id="payee_flb" />
+                  <Label text="Ammount" />
+                  <TextField fx:id="amount_flb" />
+                  <Label text="Massage(optional)" />
+                  <TextArea fx:id="massage_flb" prefHeight="70.0" prefWidth="200.0" />
+                  <Button fx:id="send_money_btn" mnemonicParsing="false" text="Send Money" />
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
