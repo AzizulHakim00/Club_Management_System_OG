@@ -50,4 +50,10 @@ jobs:
           PY
 
       - name: Build with Maven
-        run: mvn --batch-mode --no-transfer-progress -DskipTests clean package
+        shell: bash
+        run: |
+          set +e
+          mvn --batch-mode --no-transfer-progress -DskipTests clean package > /tmp/maven-build.log 2>&1
+          status=$?
+          tail -n 100 /tmp/maven-build.log
+          exit $status
