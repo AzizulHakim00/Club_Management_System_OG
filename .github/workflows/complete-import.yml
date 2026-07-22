@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - import/validated-club-management-system-20260722
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -16,6 +20,7 @@ jobs:
       - name: Check out validation branch
         uses: actions/checkout@v4
         with:
+          ref: import/validated-club-management-system-20260722
           fetch-depth: 0
 
       - name: Reconstruct and verify project package
@@ -38,4 +43,4 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
           git commit -m "Import validated Real Madrid club management system"
-          git push origin HEAD:${GITHUB_REF_NAME}
+          git push origin HEAD:import/validated-club-management-system-20260722
