@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="600" prefWidth="850" style="-fx-padding: 10;" stylesheets="@../../Style/TransferpopUp/TransferAllPlayer.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realmadrid.Controller.Couch.TransferAllPopUp.PlayerStatusController">
+<AnchorPane prefHeight="600" prefWidth="850" style="-fx-padding: 10;" stylesheets="@../../Style/TransferpopUp/TransferAllPlayer.css" xmlns="http://javafx.com/javafx/21.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realmadrid.Controller.Couch.TransferAllPopUp.PlayerPerformanceFullController">
     <children>
         <ScrollPane fitToWidth="true" prefHeight="580" prefWidth="520" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
             <content>
@@ -38,7 +38,7 @@
                               <HBox alignment="CENTER_LEFT" spacing="8">
                                   <children>
                                       <Label minWidth="110" text="nationality" />
-                                      <TextField fx:id="salaryField" prefWidth="350" promptText="e.g. 100000.00" />
+                                      <TextField fx:id="nationalityField" prefWidth="350" />
                                   </children>
                               </HBox>
                               <HBox alignment="CENTER_LEFT" spacing="8" />
@@ -46,7 +46,7 @@
                         <HBox>
                            <children>
                               <Label minWidth="110" text="ApperanceTotal" />
-                              <TextField fx:id="salaryField2" prefWidth="350" promptText="e.g. 100000.00" />
+                              <TextField fx:id="appearancesTotalField" prefWidth="350" />
                            </children>
                         </HBox>
                         <HBox>
@@ -59,26 +59,26 @@
                         <HBox>
                            <children>
                               <Label minWidth="110" text="la liga" />
-                              <TextField fx:id="salaryField1" prefWidth="350" promptText="e.g. 100000.00" />
+                              <TextField fx:id="appearancesLaLigaField" prefWidth="350" />
                               <Label minWidth="110" text="total" />
-                              <TextField fx:id="salaryField11" prefWidth="350" promptText="e.g. 100000.00" />
+                              <TextField fx:id="goalsLaLigaField" prefWidth="350" />
                               <Label layoutX="10.0" layoutY="10.0" minWidth="110" text="total" />
-                              <TextField fx:id="salaryField12" layoutX="120.0" layoutY="10.0" prefWidth="350" promptText="e.g. 100000.00" />
+                              <TextField fx:id="assistsLaLigaField" layoutX="120.0" layoutY="10.0" prefWidth="350" />
                            </children>
                         </HBox>
                               <HBox alignment="CENTER_LEFT" spacing="8" />
                         <HBox>
                            <children>
                               <Label minWidth="110" text="Champions League" />
-                              <TextField fx:id="salaryField111" prefWidth="350" promptText="e.g. 100000.00" />
+                              <TextField fx:id="appearancesChampionsField" prefWidth="350" />
                               <HBox>
                                  <children>
                                     <Label minWidth="110" text="total" />
-                                    <TextField fx:id="salaryField1111" prefWidth="350" promptText="e.g. 100000.00" />
+                                    <TextField fx:id="goalsChampionsField" prefWidth="350" />
                                  </children>
                               </HBox>
                               <Label layoutX="10.0" layoutY="10.0" minWidth="110" text="total" />
-                              <TextField fx:id="salaryField1112" layoutX="120.0" layoutY="10.0" prefWidth="350" promptText="e.g. 100000.00" />
+                              <TextField fx:id="assistsChampionsField" layoutX="120.0" layoutY="10.0" prefWidth="350" />
                            </children>
                         </HBox>
                               <HBox alignment="CENTER_LEFT" spacing="8" />
@@ -90,55 +90,55 @@
                         <HBox>
                            <children>
                               <Label minWidth="110" text="UefaSuperCup" />
-                              <TextField fx:id="salaryField1111" prefWidth="350" promptText="e.g. 100000.00" />
+                              <TextField fx:id="appearancesUefaField" prefWidth="350" />
                               <HBox>
                                  <children>
                                     <Label minWidth="110" text="total" />
-                                    <TextField fx:id="salaryField11111" prefWidth="350.0" promptText="e.g. 100000.00" />
+                                    <TextField fx:id="goalsUefaField" prefWidth="350.0" />
                                  </children>
                               </HBox>
                               <Label layoutX="10.0" layoutY="10.0" minWidth="110" text="total" />
-                              <TextField fx:id="salaryField11121" layoutX="120.0" layoutY="10.0" prefWidth="350" promptText="e.g. 100000.00" />
+                              <TextField fx:id="assistsUefaField" layoutX="120.0" layoutY="10.0" prefWidth="350" />
                            </children>
                         </HBox>
                         <HBox layoutX="20.0" layoutY="322.0">
                            <children>
                               <Label minWidth="110" text="CopadelRey" />
-                              <TextField fx:id="salaryField11111" prefWidth="350" promptText="e.g. 100000.00" />
+                              <TextField fx:id="appearancesCopaField" prefWidth="350" />
                               <HBox>
                                  <children>
                                     <Label minWidth="110" text="total" />
-                                    <TextField fx:id="salaryField111111" prefWidth="350.0" promptText="e.g. 100000.00" />
+                                    <TextField fx:id="goalsCopaField" prefWidth="350.0" />
                                  </children>
                               </HBox>
                               <Label layoutX="10.0" layoutY="10.0" minWidth="110" text="total" />
-                              <TextField fx:id="salaryField111211" layoutX="120.0" layoutY="10.0" prefWidth="350" promptText="e.g. 100000.00" />
+                              <TextField fx:id="assistsCopaField" layoutX="120.0" layoutY="10.0" prefWidth="350" />
                            </children>
                         </HBox>
                         <HBox>
                            <children>
-                                      <Label minWidth="110" text="totalGoal" />
-                                      <TextField fx:id="imagePathField" prefWidth="350" promptText="Path to image file" />
+                              <Label minWidth="110" text="totalGoal" />
+                              <TextField fx:id="goalsTotalField" prefWidth="350" />
                               <Label layoutX="10.0" layoutY="10.0" minWidth="110" text="total Assist" />
-                              <TextField fx:id="imagePathField1" layoutX="120.0" layoutY="10.0" prefWidth="350" promptText="Path to image file" />
+                              <TextField fx:id="assistsTotalField" layoutX="120.0" layoutY="10.0" prefWidth="350" />
                            </children>
                         </HBox>
                         <HBox layoutX="20.0" layoutY="384.0">
                            <children>
                               <Label minWidth="110" text="Man of the Match" />
-                              <TextField fx:id="imagePathField2" prefWidth="350" promptText="Path to image file" />
+                              <TextField fx:id="manOfMatchField" prefWidth="350" />
                            </children>
                         </HBox>
                         <HBox>
                            <children>
                               <Label minWidth="110" text="Average Raing" />
-                              <TextField fx:id="imagePathField21" prefWidth="350" promptText="Path to image file" />
+                              <TextField fx:id="averageRatingField" prefWidth="350" />
                            </children>
                         </HBox>
                         <HBox layoutX="20.0" layoutY="447.0">
                            <children>
                               <Label minWidth="110" text="SeasonYear" />
-                              <TextField fx:id="imagePathField211" prefWidth="350" promptText="Path to image file" />
+                              <TextField fx:id="seasonYearField" prefWidth="350" />
                            </children>
                         </HBox>
                         <HBox layoutX="20.0" layoutY="531.0">
@@ -148,7 +148,7 @@
                         </HBox>
                         <HBox layoutX="20.0" layoutY="562.0">
                            <children>
-                              <TextField fx:id="imagePathField21111" prefHeight="25.0" prefWidth="481.0" promptText="Path to image file" />
+                              <TextField fx:id="imagePathField" prefHeight="25.0" prefWidth="481.0" promptText="Path to image file" />
                            </children>
                         </HBox>
                           </children>

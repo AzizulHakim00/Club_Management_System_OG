@@ -1,17 +1,20 @@
 package com.example.realmadrid.Model;
 
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.sql.*;
 import java.sql.Date;
+import java.text.Format;
 import java.time.LocalDate;
 import java.util.*;
 
 public class TrainingDAO {
 
+
     private Connection connect() throws SQLException {
-        return DatabaseConfig.getConnection();
+        return DriverManager.getConnection(DatabaseConfig.url(), DatabaseConfig.username(), DatabaseConfig.password());
     }
 
     public ObservableList<TrainingSession> getAllSessions() throws SQLException {
@@ -37,7 +40,7 @@ public class TrainingDAO {
         String sql = "INSERT INTO training_sessions (player_name, date, session_type, attendance_status, fitness_level, injury_notes) VALUES (?, ?, ?, ?, ?, ?)";
         try (Connection conn = connect(); PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, session.getPlayerName());
-            ps.setDate(2, Date.valueOf(session.getDate()));
+            ps.setDate(2,  Date.valueOf(session.getDate()));
             ps.setString(3, session.getSessionType());
             ps.setString(4, session.getAttendanceStatus());
             ps.setString(5, session.getFitnessLevel());
@@ -46,11 +49,12 @@ public class TrainingDAO {
         }
     }
 
+
     public void updateSession(TrainingSession session) throws SQLException {
         String sql = "UPDATE training_sessions SET player_name=?, date=?, session_type=?, attendance_status=?, fitness_level=?, injury_notes=? WHERE id=?";
         try (Connection conn = connect(); PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, session.getPlayerName());
-            ps.setDate(2, Date.valueOf(session.getDate()));
+            ps.setDate(2 , Date.valueOf(session.getDate()));
             ps.setString(3, session.getSessionType());
             ps.setString(4, session.getAttendanceStatus());
             ps.setString(5, session.getFitnessLevel());
@@ -67,6 +71,8 @@ public class TrainingDAO {
             ps.executeUpdate();
         }
     }
+
+
 
     public double getAverageFitnessForPlayer(String playerName) {
         String sql = "SELECT fitness_level FROM training_sessions WHERE player_name = ?";
@@ -93,6 +99,15 @@ public class TrainingDAO {
 
         return fitnessValues.isEmpty() ? 0 : fitnessValues.stream().mapToInt(i -> i).average().orElse(0);
     }
+
+
+//
+//    public List<TrainingSession> getAllSessions() {
+//        return List.of(
+//                new TrainingSession(rs.getInt("id"), "John Doe", LocalDate.now(), "Cardio", "Present", "High", ""),
+//                new TrainingSession(rs.getInt("id"), "Jane Smith", LocalDate.now().minusDays(1), "Strength", "Absent", "Low", "Knee strain")
+//        );
+//    }
 
     public List<TrainingSession> getSessionsForPlayer(String playerName) throws SQLException {
         return getAllSessions().stream().filter(s -> s.getPlayerName().equals(playerName)).toList();

@@ -7,7 +7,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="641.0" prefWidth="849.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realmadrid.Controller.Admin.ViewPlayerStatusController">
+<AnchorPane prefHeight="641.0" prefWidth="849.0" xmlns="http://javafx.com/javafx/21.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realmadrid.Controller.Admin.ViewPlayerStatusController">
    <children>
       <TableView fx:id="table_upper" layoutX="14.0" layoutY="77.0" prefHeight="286.0" prefWidth="827.0">
         <columns>

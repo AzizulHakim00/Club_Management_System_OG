@@ -1,68 +1,53 @@
-# Real Madrid Club Management System
+# Real Madrid Management System
 
-A JavaFX desktop application for club administration, coach workflows, player management, match previews, training records, transfer operations, performance reports, and database-backed dashboards.
+> **Frontend preservation rule:** The original FXML layouts, CSS, navigation, dashboard, formation planner and player-card design are preserved. This version fixes the application behind that frontend; it does not replace the design.
 
-## Technology
+A Java 21 and JavaFX desktop application with coach and administrator dashboards, match history, tactical planning, training, transfer data, player status and performance tools.
 
-- Java 21
-- JavaFX 21
-- Maven
-- MySQL 8
-- FXML and CSS
-- CalendarFX, Apache POI, iText and Gson
+## Runtime fixes
 
-## Important
+- Preserved the original frontend and original images
+- Removed the mandatory MySQL/XAMPP setup
+- Added an embedded H2 database that creates and seeds itself automatically
+- Kept the existing controller and DAO interfaces compatible
+- Corrected the Java 21 Maven build and application packaging
+- Added database and resource validation tests
+- Added a native Windows EXE installer workflow with bundled Java
 
-This is a **desktop application**, not a web application. Vercel, Netlify and Render static hosting cannot run it. GitHub Actions verifies that the source builds; run the application locally with Java and Maven.
+## Demo login
 
-## Requirements
+| Role | Username | Password |
+|---|---|---|
+| Coach | `xabi` | `1234` |
+| Administrator | `admin` | `1234` |
 
-1. JDK 21
-2. Maven 3.9 or newer
-3. MySQL 8
-4. Internet access for Maven to download dependencies on the first build
+## Run in IntelliJ IDEA
 
-## Database setup
+1. Open the repository folder containing `pom.xml` as a Maven project.
+2. Select **JDK 21**.
+3. Reload Maven dependencies.
+4. Run `com.example.realmadrid.Launcher`.
 
-Create the database:
-
-```sql
-CREATE DATABASE realmadrid CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
-```
-
-Then import `database/real.sql` into the `realmadrid` database. The application reads these optional environment variables:
-
-```text
-REAL_MADRID_DB_URL=jdbc:mysql://localhost:3306/realmadrid
-REAL_MADRID_DB_USER=root
-REAL_MADRID_DB_PASSWORD=password
-```
-
-When the variables are absent, the values above are used as local defaults.
-
-## Run
-
-From the repository root:
+Or run from a terminal:
 
 ```bash
 mvn clean javafx:run
 ```
 
-On Windows, run the same command in PowerShell, Command Prompt, or the IntelliJ terminal.
+No MySQL server, XAMPP, manual SQL import or separate JavaFX installation is required.
 
-## Build without launching the interface
+The application stores its embedded database in the user's profile:
 
-```bash
-mvn --batch-mode --no-transfer-progress -DskipTests clean package
+```text
+%USERPROFILE%\.real-madrid-club-manager\realmadrid.mv.db
 ```
 
-## Demo login
+## Build checks
 
-- Coach: `xabi` / `1234`
-- Admin: `admin` / `1234`
+```bash
+mvn clean test package
+```
 
-These are demonstration credentials defined in the current application code and should be replaced with database-backed authentication before production use.
+The Windows installer includes its own Java runtime and creates desktop and Start Menu shortcuts.
 
-## Automated verification
-
-The workflow under `.github/workflows/` installs Java 21 and runs a Maven package build for pushes to the validation branch and pull requests targeting `main`.
+> Fan-made academic software. It is not affiliated with or endorsed by Real Madrid C.F.

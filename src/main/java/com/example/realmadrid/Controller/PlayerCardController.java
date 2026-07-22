@@ -52,7 +52,7 @@ public class PlayerCardController {
 
     private Image getDefaultImage() {
         if (defaultImage == null) {
-            InputStream is = getClass().getResourceAsStream("/default.png");
+            InputStream is = getClass().getResourceAsStream("/images/default.png");
             if (is != null) {
                 defaultImage = new Image(is);
             } else {

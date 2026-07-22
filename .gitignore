@@ -1,12 +1,40 @@
+# Maven / Java build output
 target/
+build/
+out/
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven wrapper: keep wrapper files, ignore local wrapper cache only
+!.mvn/wrapper/maven-wrapper.jar
+
+# IDE files
 .idea/
 *.iml
+*.iws
+*.ipr
+.vscode/
 .classpath
 .project
 .settings/
+
+# OS files
 .DS_Store
 Thumbs.db
+
+# Logs/temp
 *.log
-.env
-config_team*.txt
-team*_formation.txt
+*.tmp
+*.bak
+
+# Local database/runtime files
+*.db
+*.sqlite
+*.sqlite3
+
+# Archives should not be committed inside the repository
+*.zip
+*.rar
+*.7z

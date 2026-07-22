@@ -38,7 +38,7 @@ public class AllPlayersController {
 
     public void initialize() throws SQLException {
         try {
-            conn = DatabaseConfig.getConnection();
+            conn = DriverManager.getConnection(DatabaseConfig.url(), DatabaseConfig.username(), DatabaseConfig.password());
         } catch (SQLException e) {
             lblMessage.setText("DB Connection error: " + e.getMessage());
         }

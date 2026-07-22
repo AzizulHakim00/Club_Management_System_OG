@@ -74,7 +74,7 @@ public class PlayerStatusController {
 
 
         try {
-            conn = DatabaseConfig.getConnection();
+            conn = DriverManager.getConnection(DatabaseConfig.url(), DatabaseConfig.username(), DatabaseConfig.password());
         } catch (SQLException e) {
             e.printStackTrace();
             showAlert("Database Error", "Could not connect to database.");
@@ -320,12 +320,3 @@ public class PlayerStatusController {
 
 
 
-//FXMLLoader loader = new FXMLLoader(getClass().getResource("/path/to/playerstatus.fxml"));
-//Parent root = loader.load();
-//
-//PlayerStatusController controller = loader.getController();
-//controller.setPlayerStatus(selectedPlayer); // load player data into popup
-//
-//Stage stage = new Stage();
-//stage.setScene(new Scene(root));
-//        stage.show();

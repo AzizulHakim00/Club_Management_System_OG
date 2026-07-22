@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realmadrid.Controller.Couch.TransferAllPopUp.PlayerPerformancePopUpController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realmadrid.Controller.Couch.TransferAllPopUp.PlayerPerformancePopUpController">
    <ImageView fx:id="imageview_fld" fitHeight="267.0" fitWidth="212.0" layoutX="374.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
       <image>
          <Image url="@../../Images/images%20(2).jpeg" />

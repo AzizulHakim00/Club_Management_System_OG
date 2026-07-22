@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox spacing="10" stylesheets="@../../Style/TransferpopUp/TransferAllPlayer.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realmadrid.Couch.transferallpopup.PlayerStatusPopupController">
+<VBox spacing="10" stylesheets="@../../Style/TransferpopUp/TransferAllPlayer.css" xmlns="http://javafx.com/javafx/21.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realmadrid.Controller.Couch.TransferAllPopUp.PlayerStatusPopupController">
 
     <padding>
         <Insets bottom="15" left="15" right="15" top="15" />

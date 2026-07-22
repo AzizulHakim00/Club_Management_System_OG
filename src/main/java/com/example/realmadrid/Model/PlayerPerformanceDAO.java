@@ -8,7 +8,7 @@ import java.util.List;
 
 public class PlayerPerformanceDAO {
     public Connection getConnection() throws SQLException {
-        return DatabaseConfig.getConnection();
+        return DriverManager.getConnection(DatabaseConfig.url(), DatabaseConfig.username(), DatabaseConfig.password());
     }
 
     public PlayerPerformance getByPlayerName(String name) throws SQLException {

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="l1111" maxHeight="43.0" maxWidth="314.0" prefHeight="39.0" prefWidth="302.0" styleClass="cell_container" stylesheets="@../Style/Strength_weekNess_style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="l1111" maxHeight="43.0" maxWidth="314.0" prefHeight="39.0" prefWidth="302.0" styleClass="cell_container" stylesheets="@../Style/Strength_weekNess_style.css" xmlns="http://javafx.com/javafx/21.0.2" xmlns:fx="http://javafx.com/fxml/1">
    <HBox alignment="CENTER_LEFT" layoutX="4.0" layoutY="8.0">
       <children>
           <FontAwesomeIconView fill="GREEN" glyphName="PLUS" size="12" />

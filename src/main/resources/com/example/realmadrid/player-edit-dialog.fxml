@@ -4,10 +4,12 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml"
+<VBox xmlns="http://javafx.com/javafx/21.0.2" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.example.realmadrid.Controller.PlayerEditDialogController"
-      spacing="10" alignment="CENTER" style="-fx-background-color: #f9f9f9;"
-      padding="20">
+      spacing="10" alignment="CENTER" style="-fx-background-color: #f9f9f9;">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20" />
+    </padding>
 
     <Label text="Edit Player" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
 

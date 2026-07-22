@@ -1,5 +1,6 @@
 package com.example.realmadrid.Controller.Couch;
 
+import com.example.realmadrid.Model.DatabaseConfig;
 import com.example.realmadrid.Model.Match;
 import com.example.realmadrid.Model.Model;
 import com.example.realmadrid.Model.PointsTable.LaLigaClub;
@@ -167,9 +168,13 @@ public class CouchDashBoardController implements Initializable {
 
     private List<LaLigaClub> loadData(String tableName) {
         List<LaLigaClub> list = new ArrayList<>();
+        String url = DatabaseConfig.url();
+        String user = DatabaseConfig.username();
+        String password = DatabaseConfig.password();
+
         String sql = "SELECT * FROM " + tableName + " ORDER BY total_points DESC";
 
-        try (Connection conn = com.example.realmadrid.Model.DatabaseConfig.getConnection();
+        try (Connection conn = DriverManager.getConnection(url, user, password);
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
 

@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<ScrollPane prefHeight="1197.0" prefWidth="878.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realmadrid.Controller.Couch.TrainingController">
+<ScrollPane prefHeight="1197.0" prefWidth="878.0" xmlns="http://javafx.com/javafx/21.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realmadrid.Controller.Couch.TrainingController">
    <content>
       <BorderPane prefHeight="1190.0" prefWidth="876.0" styleClass="border-pane" stylesheets="@../Style/Training.css">
       

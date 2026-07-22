@@ -737,7 +737,7 @@ public class Model {
 
         String sql = "SELECT * FROM playerstatus WHERE playerName = ?";
 
-        try (Connection conn = DatabaseConfig.getConnection();
+        try (Connection conn = DriverManager.getConnection(DatabaseConfig.url(), DatabaseConfig.username(), DatabaseConfig.password());
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
             ps.setString(1, playerName);
@@ -780,7 +780,7 @@ public class Model {
     public void setPlayerStatusList() {
         String sql = "SELECT * FROM playerstatus";
 
-        try (Connection conn = DatabaseConfig.getConnection();
+        try (Connection conn = DriverManager.getConnection(DatabaseConfig.url(), DatabaseConfig.username(), DatabaseConfig.password());
             Statement stmt = conn.createStatement();) {
 
             ResultSet rs = stmt.executeQuery(sql);
@@ -828,7 +828,7 @@ public class Model {
 
         String sql = "SELECT * FROM match_statistics WHERE match_date = ?";
 
-        try (Connection conn = DatabaseConfig.getConnection();
+        try (Connection conn = DriverManager.getConnection(DatabaseConfig.url(), DatabaseConfig.username(), DatabaseConfig.password());
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setDate(1, Date.valueOf(date));

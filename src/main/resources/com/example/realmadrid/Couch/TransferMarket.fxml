@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="750.0" prefWidth="977.0" styleClass="root" stylesheets="@../Style/TransferMarket.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realmadrid.Controller.Couch.TransferWindow">
+<BorderPane prefHeight="750.0" prefWidth="977.0" styleClass="root" stylesheets="@../Style/TransferMarket.css" xmlns="http://javafx.com/javafx/21.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realmadrid.Controller.Couch.TransferWindow">
 
     <top>
         <Label style="-fx-font-size: 24px; -fx-padding: 10;" text="Football Transfer Market" BorderPane.alignment="CENTER" />

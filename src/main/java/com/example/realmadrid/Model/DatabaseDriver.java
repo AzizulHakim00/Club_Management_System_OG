@@ -30,7 +30,11 @@ public class DatabaseDriver {
     private Connection conn;
     public DatabaseDriver(){
         try{
-            this.conn = DatabaseConfig.getConnection();
+            String url = DatabaseConfig.url();
+            String username = DatabaseConfig.username();
+            String password = DatabaseConfig.password();
+
+            this.conn = DriverManager.getConnection(url, username, password);
             System.out.println("Connection to MySQL database established.");
 
         } catch (Exception e) {
