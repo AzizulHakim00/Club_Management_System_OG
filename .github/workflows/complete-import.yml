@@ -16,10 +16,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out source branch
+      - name: Check out source
         uses: actions/checkout@v4
-        with:
-          ref: import/validated-club-management-system-20260722
 
       - name: Set up Java 21
         uses: actions/setup-java@v4
@@ -52,15 +50,4 @@ jobs:
           PY
 
       - name: Build with Maven
-        shell: bash
-        run: |
-          mvn --batch-mode --no-transfer-progress -DskipTests clean package 2>&1 | tee /tmp/maven-build.log
-
-      - name: Upload Maven failure log
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: maven-build-log
-          path: /tmp/maven-build.log
-          if-no-files-found: error
-          retention-days: 1
+        run: mvn --batch-mode --no-transfer-progress -DskipTests clean package
