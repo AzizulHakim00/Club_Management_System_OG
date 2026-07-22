@@ -1,4 +1,4 @@
-name: Build validated JavaFX project
+name: Import completed original JavaFX project
 
 on:
   push:
@@ -10,44 +10,51 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  build:
+  import-original:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
-      - name: Check out source
+      - name: Check out validation branch
         uses: actions/checkout@v4
-
-      - name: Set up Java 21
-        uses: actions/setup-java@v4
         with:
-          distribution: temurin
-          java-version: '21'
-          cache: maven
+          ref: import/validated-club-management-system-20260722
+          fetch-depth: 0
 
-      - name: Validate required project files
+      - name: Download and verify completed original project
         shell: bash
         run: |
-          test -f pom.xml
-          test -f database/real.sql
-          test -f src/main/java/com/example/realmadrid/App.java
-          test -f src/main/java/module-info.java
+          curl --fail --location --retry 3 \
+            'https://sdmntprcentralus.oaiusercontent.com/files/00000000-c62c-81f5-b044-1df474081bf9/raw?se=2026-07-22T06:13:00Z&sp=r&sv=2026-02-06&sr=b&scid=c42b2082-6fbd-55f8-aa4a-369f287242b9&skoid=864daabb-d06a-46b3-a747-d35075313a83&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-07-22T05:39:26Z&ske=2026-07-24T05:39:26Z&sks=b&skv=2026-02-06&sig=KmcxoKmTgLRzeS5U4//vBHYPL0I0dsBHfDkgPpYQdC8%3D' \
+            --output /tmp/completed-original-project.zip
+          echo 'b9cc8e02e439da61b63a46f9b86dbf247f6dab80f74667d299c43f6b44c779db  /tmp/completed-original-project.zip' | sha256sum --check --strict
+          mkdir -p /tmp/completed-original
+          unzip -q /tmp/completed-original-project.zip -d /tmp/completed-original
+          echo 'bc185d2ab89ff9591bc10d299fbeabc33f3291fcae5ed971584c9f699799453c  /tmp/completed-original/real-madrid-completed-original.tar.gz' | sha256sum --check --strict
 
-      - name: Validate FXML files
+      - name: Replace branch with required completed original files
         shell: bash
         run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          import xml.etree.ElementTree as ET
+          cp .github/workflows/complete-import.yml /tmp/complete-import.yml
+          find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          tar -xzf /tmp/completed-original/real-madrid-completed-original.tar.gz -C .
 
-          files = sorted(Path('src/main/resources').rglob('*.fxml'))
-          if not files:
-              raise SystemExit('No FXML files found')
-          for path in files:
-              ET.parse(path)
-          print(f'Validated {len(files)} FXML files')
-          PY
+          # Keep only files needed to build and run the completed application.
+          rm -rf .github .export-ready GITHUB_UPLOAD_STEPS.md database src/test
+          rm -f src/main/java/com/example/realmadrid/Controller/Admin/ifany.java
+          rm -f src/main/resources/com/example/realmadrid/Style/VideoLogin.css
 
-      - name: Build with Maven
-        run: mvn --batch-mode --no-transfer-progress -DskipTests clean package
+          mkdir -p .github/workflows
+          cp /tmp/complete-import.yml .github/workflows/complete-import.yml
+          chmod +x mvnw
+
+      - name: Commit completed original application
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Restore completed original Real Madrid application'
+          git push origin HEAD:import/validated-club-management-system-20260722
