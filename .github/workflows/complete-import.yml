@@ -43,11 +43,15 @@ jobs:
           test "$(wc -c < /tmp/project.tar.xz)" -eq 71188
           echo "58ef727caaffae1e5635113299edd23e3e8ef6e8448f824b091a55ebbf2047ef  /tmp/project.tar.xz" | sha256sum --check --strict
 
-      - name: Replace temporary transfer files with project source
+      - name: Replace transfer files with validated source
         shell: bash
         run: |
+          cp .github/workflows/complete-import.yml /tmp/complete-import.yml
           find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
           tar -xJf /tmp/project.tar.xz -C .
+          rm -rf .github
+          mkdir -p .github/workflows
+          cp /tmp/complete-import.yml .github/workflows/complete-import.yml
 
       - name: Commit validated project
         shell: bash
