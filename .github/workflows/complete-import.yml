@@ -26,7 +26,21 @@ jobs:
       - name: Reconstruct and verify project package
         shell: bash
         run: |
-          cat .bootstrap/part-* > /tmp/project.tar.xz.b64
+          cat \
+            .bootstrap/part-000 \
+            .bootstrap/part-0010 \
+            .bootstrap/part-0011 \
+            .bootstrap/part-0012 \
+            .bootstrap/part-002 \
+            .bootstrap/part-0030 \
+            .bootstrap/part-0031 \
+            .bootstrap/part-0032 \
+            .bootstrap/part-0040 \
+            .bootstrap/part-0041 \
+            .bootstrap/part-0042 \
+            .bootstrap/part-0050 \
+            > /tmp/project.tar.xz.b64
+          test "$(wc -c < /tmp/project.tar.xz.b64)" -eq 94920
           base64 --decode /tmp/project.tar.xz.b64 > /tmp/project.tar.xz
           echo "58ef727caaffae1e5635113299edd23e3e8ef6e8448f824b091a55ebbf2047ef  /tmp/project.tar.xz" | sha256sum --check --strict
 
