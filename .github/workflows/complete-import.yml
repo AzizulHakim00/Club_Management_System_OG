@@ -1,0 +1,41 @@
+name: Complete validated project import
+
+on:
+  push:
+    branches:
+      - import/validated-club-management-system-20260722
+
+permissions:
+  contents: write
+
+jobs:
+  import-project:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out validation branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Reconstruct and verify project package
+        shell: bash
+        run: |
+          cat .bootstrap/part-* > /tmp/project.tar.xz.b64
+          base64 --decode /tmp/project.tar.xz.b64 > /tmp/project.tar.xz
+          echo "58ef727caaffae1e5635113299edd23e3e8ef6e8448f824b091a55ebbf2047ef  /tmp/project.tar.xz" | sha256sum --check --strict
+
+      - name: Replace temporary transfer files with project source
+        shell: bash
+        run: |
+          find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          tar -xJf /tmp/project.tar.xz -C .
+
+      - name: Commit validated project
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Import validated Real Madrid club management system"
+          git push origin HEAD:${GITHUB_REF_NAME}
