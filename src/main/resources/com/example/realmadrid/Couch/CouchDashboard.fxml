@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="750.0" prefWidth="900.0" styleClass="dashboard" stylesheets="@../Style/DashBoard.css" xmlns="http://javafx.com/javafx/21.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realmadrid.Controller.Couch.CouchDashBoardController">
+   <children>
+      <Text fx:id="user_name" layoutX="14.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="user_name" text="Hi , Xabi Alonso" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="30.0" />
+      <Label fx:id="login_date" layoutX="14.0" layoutY="6.0" styleClass="date_lbl" text="Today, 2022-03-12" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="27.0" />
+      <Text layoutX="749.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="Upcoming Tournament Matches" AnchorPane.rightAnchor="15.866806030273438" AnchorPane.topAnchor="72.40000057220459" />
+      <Text layoutX="20.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="Last Match Played" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="81.40000057220459" />
+      <HBox layoutX="12.0" layoutY="107.0" prefHeight="142.0" prefWidth="881.0" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="107.0">
+         <children>
+            <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="119.0" prefWidth="191.0">
+               <styleClass>
+                  <String fx:value="team" />
+                  <String fx:value="team_gradient" />
+               </styleClass>
+               <children>
+                  <Button fx:id="Laliga_button" mnemonicParsing="false" prefHeight="122.0" prefWidth="202.0" />
+                  <AnchorPane layoutX="12.0" layoutY="82.0" prefHeight="20.0" prefWidth="17.0" style="-fx-background-color: black;">
+                     <children>
+                        <ImageView fx:id="opponent_one_image" fitHeight="22.0" fitWidth="18.0" layoutY="-1.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../Images/opponentClub.png" />
+                           </image></ImageView>
+                     </children></AnchorPane>
+                  <AnchorPane layoutX="12.0" layoutY="23.0" prefHeight="20.0" prefWidth="17.0" style="-fx-background-color: black;">
+                     <children>
+                        <ImageView fitHeight="20.0" fitWidth="18.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../Images/real-madrid-icon-1467x2048-p4mfm7ya.png" />
+                           </image></ImageView>
+                     </children></AnchorPane>
+                  <Text fill="WHITE" layoutX="35.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="team_name" text="Real Madrid" wrappingWidth="78.052734375" />
+                  <Label fx:id="opponent_one" alignment="CENTER" layoutX="34.0" layoutY="84.0" prefHeight="17.0" prefWidth="78.0" styleClass="team_name" text="Oppsiition" textFill="WHITE" />
+                  <Label fx:id="my_score_one" layoutX="118.0" layoutY="28.0" styleClass="team_score" text="4" />
+                  <Label fx:id="opponent_score_one" layoutX="120.0" layoutY="86.0" styleClass="team_score" text="0" />
+                  <Line endX="25.0" endY="-10.0" layoutX="113.0" layoutY="24.0" startX="25.0" startY="81.0" stroke="WHITE" />
+                  <FontAwesomeIconView fill="#0d0000" glyphName="CARET_LEFT" layoutX="130.0" layoutY="42.0" size="20" text="" />
+                  <Label fx:id="oppoene_one_date" layoutX="144.0" layoutY="47.0" prefHeight="17.0" prefWidth="55.0" text="2022-03-22" textFill="WHITE">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="oppoene_one_time" alignment="CENTER" layoutX="142.0" layoutY="64.0" prefHeight="17.0" prefWidth="55.0" text="11:03:02" textFill="WHITE">
+                     <font>
+                        <Font size="8.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="opponent_one_venue" alignment="CENTER" layoutX="149.0" layoutY="81.0" prefHeight="20.0" prefWidth="38.0" text="Home" textFill="#fffbfb" />
+                  <Label fx:id="opponent_one_touranment" layoutX="15.0" layoutY="56.0" text="LaLiga" textFill="WHITE">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="349.0" layoutY="20.0" prefHeight="119.0" prefWidth="191.0">
+               <styleClass>
+                  <String fx:value="team" />
+                  <String fx:value="team_gradient" />
+               </styleClass>
+               <children>
+                  <Button fx:id="champions_league_btn" mnemonicParsing="false" prefHeight="122.0" prefWidth="202.0" />
+                  <AnchorPane layoutX="12.0" layoutY="82.0" prefHeight="20.0" prefWidth="17.0" style="-fx-background-color: black;">
+                     <children>
+                        <ImageView fx:id="opponent_one_image1" fitHeight="22.0" fitWidth="18.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/opponentClub.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="12.0" layoutY="23.0" prefHeight="20.0" prefWidth="17.0" style="-fx-background-color: black;">
+                     <children>
+                        <ImageView fitHeight="22.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/real-madrid-icon-1467x2048-p4mfm7ya.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <Text fill="WHITE" layoutX="35.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="team_name" text="Real Madrid" wrappingWidth="78.052734375" />
+                  <Label fx:id="opponent_two" alignment="CENTER" layoutX="34.0" layoutY="84.0" prefHeight="17.0" prefWidth="78.0" styleClass="team_name" text="Oppsiition" textFill="WHITE" />
+                  <Label fx:id="my_score_two" layoutX="118.0" layoutY="28.0" styleClass="team_score" text="4" />
+                  <Label fx:id="opponent_score_two" layoutX="120.0" layoutY="86.0" styleClass="team_score" text="0" />
+                  <Line endX="25.0" endY="-10.0" layoutX="113.0" layoutY="24.0" startX="25.0" startY="81.0" stroke="WHITE" />
+                  <FontAwesomeIconView fill="#0d0000" glyphName="CARET_LEFT" layoutX="130.0" layoutY="42.0" size="20" text="" />
+                  <Label fx:id="oppoene_two_date" layoutX="144.0" layoutY="47.0" prefHeight="17.0" prefWidth="55.0" text="2022-03-22" textFill="WHITE">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="oppoene_two_time" alignment="CENTER" layoutX="142.0" layoutY="64.0" prefHeight="17.0" prefWidth="55.0" text="11:03:02" textFill="WHITE">
+                     <font>
+                        <Font size="8.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="opponent_two_venue" alignment="CENTER" layoutX="149.0" layoutY="81.0" prefHeight="20.0" prefWidth="38.0" text="Home" textFill="#fffbfb" />
+                  <Label fx:id="oppponent_two_tournament" layoutX="15.0" layoutY="56.0" text="LaLiga" textFill="WHITE">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="455.0" layoutY="20.0" prefHeight="119.0" prefWidth="191.0">
+               <styleClass>
+                  <String fx:value="team" />
+                  <String fx:value="team_gradient" />
+               </styleClass>
+               <children>
+                  <Button fx:id="uefa_btn" mnemonicParsing="false" prefHeight="122.0" prefWidth="202.0" />
+                  <AnchorPane layoutX="12.0" layoutY="82.0" prefHeight="20.0" prefWidth="17.0" style="-fx-background-color: black;">
+                     <children>
+                        <ImageView fx:id="opponent_one_image11" fitHeight="20.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/opponentClub.png" />
+                           </image></ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="12.0" layoutY="23.0" prefHeight="20.0" prefWidth="17.0" style="-fx-background-color: black;">
+                     <children>
+                        <ImageView fitHeight="22.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/real-madrid-icon-1467x2048-p4mfm7ya.png" />
+                           </image></ImageView>
+                     </children>
+                  </AnchorPane>
+                  <Text fill="WHITE" layoutX="35.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="team_name" text="Real Madrid" wrappingWidth="78.052734375" />
+                  <Label fx:id="oppoene_three_name" alignment="CENTER" layoutX="34.0" layoutY="84.0" prefHeight="17.0" prefWidth="78.0" styleClass="team_name" text="Oppsiition" textFill="WHITE" />
+                  <Label fx:id="my_score_three" layoutX="118.0" layoutY="28.0" styleClass="team_score" text="4" />
+                  <Label fx:id="opponent_score_3" layoutX="120.0" layoutY="86.0" styleClass="team_score" text="0" />
+                  <Line endX="25.0" endY="-10.0" layoutX="113.0" layoutY="24.0" startX="25.0" startY="81.0" stroke="WHITE" />
+                  <FontAwesomeIconView fill="#0d0000" glyphName="CARET_LEFT" layoutX="130.0" layoutY="42.0" size="20" text="" />
+                  <Label fx:id="opponent_data_three" layoutX="144.0" layoutY="47.0" prefHeight="17.0" prefWidth="55.0" text="2022-03-22" textFill="WHITE">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="opponent_time_three" alignment="CENTER" layoutX="142.0" layoutY="64.0" prefHeight="17.0" prefWidth="55.0" text="11:03:02" textFill="WHITE">
+                     <font>
+                        <Font size="8.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="opponent_venue_three" alignment="CENTER" layoutX="149.0" layoutY="81.0" prefHeight="20.0" prefWidth="38.0" text="Home" textFill="#fffbfb" />
+                  <Label fx:id="opponen_threr_tournament" layoutX="15.0" layoutY="56.0" text="LaLiga" textFill="WHITE">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="562.0" layoutY="20.0" prefHeight="119.0" prefWidth="191.0">
+               <styleClass>
+                  <String fx:value="team" />
+                  <String fx:value="team_gradient" />
+               </styleClass>
+               <children>
+                  <Button fx:id="scdr_btn" mnemonicParsing="false" prefHeight="122.0" prefWidth="202.0" />
+                  <AnchorPane layoutX="12.0" layoutY="82.0" prefHeight="20.0" prefWidth="17.0" style="-fx-background-color: black;">
+                     <children>
+                        <ImageView fx:id="opponent_one_image111" fitHeight="22.0" fitWidth="18.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/opponentClub.png" />
+                           </image></ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="12.0" layoutY="23.0" prefHeight="20.0" prefWidth="17.0" style="-fx-background-color: black;">
+                     <children>
+                        <ImageView fitHeight="22.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/real-madrid-icon-1467x2048-p4mfm7ya.png" />
+                           </image></ImageView>
+                     </children>
+                  </AnchorPane>
+                  <Text fill="WHITE" layoutX="35.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="team_name" text="Real Madrid" wrappingWidth="78.052734375" />
+                  <Label fx:id="opponent_name_4" alignment="CENTER" layoutX="34.0" layoutY="84.0" prefHeight="17.0" prefWidth="78.0" styleClass="team_name" text="Oppsiition" textFill="WHITE" />
+                  <Label fx:id="mey_four_score" layoutX="118.0" layoutY="28.0" styleClass="team_score" text="4" />
+                  <Label fx:id="opponent_4_score" layoutX="120.0" layoutY="86.0" styleClass="team_score" text="0" />
+                  <Line endX="25.0" endY="-10.0" layoutX="113.0" layoutY="24.0" startX="25.0" startY="81.0" stroke="WHITE" />
+                  <FontAwesomeIconView fill="#0d0000" glyphName="CARET_LEFT" layoutX="130.0" layoutY="42.0" size="20" text="" />
+                  <Label fx:id="opponent_4_date" layoutX="144.0" layoutY="47.0" prefHeight="17.0" prefWidth="55.0" text="2022-03-22" textFill="WHITE">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="opponent_4_time" alignment="CENTER" layoutX="142.0" layoutY="64.0" prefHeight="17.0" prefWidth="55.0" text="11:03:02" textFill="WHITE">
+                     <font>
+                        <Font size="8.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="opponent_4_venue" alignment="CENTER" layoutX="149.0" layoutY="81.0" prefHeight="20.0" prefWidth="38.0" text="Home" textFill="#fffbfb" />
+                  <Label fx:id="tournament_4" layoutX="15.0" layoutY="56.0" text="LaLiga" textFill="WHITE">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+         <styleClass>
+            <String fx:value="account_view" />
+            <String fx:value="team_view" />
+         </styleClass>
+      </HBox>
+      <Text layoutX="20.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="Latest Matches" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="269.4000005722046" />
+      <ListView fx:id="latest_match_list" layoutX="12.0" layoutY="320.0" prefHeight="448.0" prefWidth="510.0" styleClass="recent_listview" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="12.0" />
+      <VBox alignment="CENTER" layoutX="537.0" layoutY="249.0" prefHeight="491.0" prefWidth="357.0" styleClass="table_container">
+         <children>
+            <AnchorPane prefHeight="77.0" prefWidth="330.0">
+               <children>
+                  <ChoiceBox fx:id="club_choice_box" layoutY="27.0" prefHeight="28.0" prefWidth="131.0" />
+                  <Label layoutX="160.0" layoutY="6.0" />
+                  <Text layoutX="6.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="League Table" wrappingWidth="87.078125" />
+                  <Text layoutX="157.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Season" />
+                  <ChoiceBox layoutX="160.0" layoutY="30.0" prefHeight="20.0" prefWidth="131.0" />
+               </children>
+            </AnchorPane>
+            <TableView fx:id="club_table" prefHeight="472.0" prefWidth="332.0">
+              <columns>
+                <TableColumn fx:id="club_id" prefWidth="28.0" text="P" />
+                  <TableColumn fx:id="club_name" prefWidth="152.0" text="Club" />
+                  <TableColumn fx:id="club_win" prefWidth="34.0" text="W" />
+                  <TableColumn fx:id="club_draw" prefWidth="16.0" text="D" />
+                  <TableColumn fx:id="club_loss" prefWidth="31.0" text="L" />
+                  <TableColumn fx:id="club_goaldice" prefWidth="29.0" text="GD" />
+                  <TableColumn fx:id="club_points" prefWidth="68.0" text="Pts" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+      <AnchorPane layoutX="150.0" layoutY="44.0" prefHeight="68.0" prefWidth="574.0">
+         <styleClass>
+            <String fx:value="account" />
+            <String fx:value="account_gradient" />
+         </styleClass>
+      </AnchorPane>
+   </children>
+</AnchorPane>

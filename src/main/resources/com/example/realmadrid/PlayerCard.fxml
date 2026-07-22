@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="root" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.realmadrid.Controller.PlayerCardController"
+            styleClass="player-card"
+            prefWidth="72" prefHeight="72" minWidth="72" minHeight="72" maxWidth="72" maxHeight="72">
+
+    <ImageView fx:id="playerImage" fitWidth="40" fitHeight="40"
+               layoutX="16" layoutY="6" styleClass="image-view" />
+
+    <Text fx:id="playerName" layoutX="0" layoutY="54"
+          styleClass="player-name" wrappingWidth="72" />
+
+    <Text fx:id="playerPosition" layoutX="0" layoutY="67"
+          styleClass="player-position" wrappingWidth="72" />
+
+</AnchorPane>

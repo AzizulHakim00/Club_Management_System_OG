@@ -1,0 +1,109 @@
+/* ========== Container Backgrounds ========== */
+
+.login-container {
+    -fx-background-color: #FFFFFF; /* Classic white background */
+}
+
+.login_logo_container {
+    -fx-background-color: #001F54; /* Real Madrid navy */
+    -fx-alignment: center;
+}
+
+/* ========== Logo Text & Icons ========== */
+
+.login_logo_container Text {
+    -fx-font-size: 2em;
+    -fx-fill: #EAF6FF; /* Light blue text */
+}
+
+.login_logo_container FontAwesomeIconView {
+    -fx-fill: #87CEFA; /* Soft sky blue icon */
+}
+
+/* ========== ComboBox (Account Selector) ========== */
+
+.account_selector {
+    -fx-background-color: linear-gradient(to bottom, #EAF6FF, #D9ECFF);
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-color: #87CEFA;
+    -fx-border-width: 1;
+    -fx-padding: 4 8;
+    -fx-font-size: 1em;
+    -fx-pref-height: 28;
+    -fx-max-height: 28;
+}
+
+.account_selector .label {
+    -fx-text-fill: #001F54;
+    -fx-font-weight: 500;
+    -fx-font-size: 0.95em;
+}
+
+.account_selector .arrow {
+    -fx-background-color: #001F54;
+    -fx-shape: "M0,0 L4,4 L8,0 Z";
+    -fx-padding: 0 4 0 4;
+}
+
+#choice-box-popup-menu {
+    -fx-background-color: #E9F7FF;
+    -fx-border-color: #87CEFA;
+    -fx-border-width: 1;
+    -fx-background-radius: 4;
+    -fx-font-size: 0.95em;
+}
+
+/* Optional: Prompt text customization */
+#choice-prompt_text {
+    -fx-font-weight: 400;
+    -fx-text-fill: #444;
+}
+
+/* ========== Login Form ========== */
+
+.login_form_container {
+    -fx-spacing: 15;
+    -fx-alignment: top-left;
+}
+
+.login_form_container Label {
+    -fx-font-size: 1.1em;
+    -fx-font-weight: bold;
+    -fx-text-fill: #001F54;
+}
+
+.input_field {
+    -fx-background-color: #F9FBFC;
+    -fx-border-color: #87CEFA;
+    -fx-border-radius: 4;
+    -fx-padding: 5 10;
+    -fx-font-size: 1em;
+    -fx-pref-height: 30;
+    -fx-text-fill: #001F54;
+}
+
+/* ========== Login Button ========== */
+
+.login_form_container Button {
+    -fx-background-color: #001F54;
+    -fx-text-fill: #FFFFFF;
+    -fx-pref-height: 30;
+    -fx-pref-width: 350;
+    -fx-font-size: 1.1em;
+    -fx-background-radius: 8;
+    -fx-font-weight: bold;
+}
+
+.login_form_container Button:hover {
+    -fx-cursor: hand;
+    -fx-background-color: #003F91;
+}
+
+/* ========== Error Label ========== */
+
+.error_lbl {
+    -fx-text-fill: #FF3B3B;
+    -fx-font-size: 0.9em;
+    -fx-font-weight: bold;
+}

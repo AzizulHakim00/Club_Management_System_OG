@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane styleClass="root" xmlns="http://javafx.com/javafx/21.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realmadrid.Controller.MainController">
+
+    <!-- Top Toolbar -->
+    <top>
+        <ToolBar styleClass="toolbar">
+            <Label styleClass="toolbar-label" text="Formation:" />
+            <ComboBox fx:id="formationComboBox" prefWidth="140" />
+            <Separator orientation="VERTICAL" />
+            <Button fx:id="toggleButton" onAction="#toggleDetailsPane" text="Hide Details" />
+            <Button onAction="#onEditPlayer" text="Edit Player" />
+            <Button onAction="#onSaveFormation" text="Save" />
+            <Button onAction="#onLoadFormation" text="Load" />
+         <Button fx:id="performance_btn" mnemonicParsing="false" text="show Performance" />
+        </ToolBar>
+    </top>
+
+    <!-- Player List on Left -->
+    <left>
+        <VBox prefWidth="180" spacing="4" styleClass="side-pane-compact">
+            <Label styleClass="section-title-compact" text="Squad" />
+            <ListView fx:id="playerListView" prefWidth="180" />
+        </VBox>
+    </left>
+
+    <!-- Formation Field in Center -->
+    <center>
+        <AnchorPane fx:id="formationPane" prefHeight="460" prefWidth="680" styleClass="formation-pane-compact">
+            <!-- Player cards added dynamically -->
+        </AnchorPane>
+    </center>
+
+    <!-- Player Details on Right -->
+    <right>
+        <VBox fx:id="playerDetailsPane" alignment="TOP_CENTER" prefWidth="220" spacing="6" styleClass="details-pane-compact">
+            <Label styleClass="section-title-compact" text="Player Info" />
+
+            <ImageView fx:id="playerImageView" fitHeight="120" fitWidth="120" preserveRatio="true" styleClass="player-image-compact" />
+
+            <Label styleClass="field-label" text="Name:" />
+            <Label fx:id="nameLabel" styleClass="field-value-compact" />
+
+            <Label styleClass="field-label" text="Pos:" />
+            <Label fx:id="positionLabel" styleClass="field-value-compact" />
+        </VBox>
+    </right>
+
+</BorderPane>

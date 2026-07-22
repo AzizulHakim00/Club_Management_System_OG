@@ -1,0 +1,91 @@
+/* === General Styling === */
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-background-color: #f4f4f4;
+}
+
+/* === Label Styling (Only Color) === */
+Label {
+    -fx-text-fill: #333333; /* dark grey text */
+}
+
+/* === TextField and DatePicker Styling === */
+TextField, DatePicker {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 4 8 4 8;
+    -fx-text-fill: #000000;
+}
+
+TextField:focused, DatePicker:focused {
+    -fx-border-color: #0078d7; /* light blue border on focus */
+    -fx-effect: dropshadow(three-pass-box, #0078d7, 5, 0.3, 0, 0);
+}
+
+
+/* For popup FXML root pane, use a smaller width */
+.popup-root {
+    -fx-pref-width: 400px;   /* Preferred width smaller for popup */
+    -fx-max-width: 400px;
+    -fx-min-width: 400px;
+    -fx-padding: 15px 20px;
+    -fx-background-color: #ffffff; /* clean white */
+    -fx-font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    -fx-border-color: #ccc;
+    -fx-border-width: 1px;
+    -fx-border-radius: 6px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0, 0, 1);
+    -fx-spacing: 8px;
+}
+
+/* === TextArea Styling === */
+TextArea {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-text-fill: #000000;
+    -fx-padding: 8;
+}
+
+TextArea:focused {
+    -fx-border-color: #0078d7;
+    -fx-effect: dropshadow(three-pass-box, #0078d7, 5, 0.3, 0, 0);
+}
+
+/* === Button Styling === */
+.button {
+    -fx-background-color: #0078d7;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-padding: 6 12 6 12;
+}
+
+.button:hover {
+    -fx-background-color: #005fa3;
+}
+
+.exit-button {
+    -fx-background-color: #e81123;
+    -fx-text-fill: white;
+}
+
+.exit-button:hover {
+    -fx-background-color: #c50f1f;
+}
+
+/* === ImageView Styling === */
+.image-view {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0.2, 0, 4);
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 4;
+}
+
+/* === ScrollPane tweaks (optional) === */
+.scroll-pane {
+    -fx-background: transparent;
+    -fx-border-color: transparent;
+}

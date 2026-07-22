@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="750.0" prefWidth="977.0" styleClass="root" stylesheets="@../Style/TransferMarket.css" xmlns="http://javafx.com/javafx/21.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realmadrid.Controller.Couch.TransferWindow">
+
+    <top>
+        <Label style="-fx-font-size: 24px; -fx-padding: 10;" text="Football Transfer Market" BorderPane.alignment="CENTER" />
+    </top>
+
+    <center>
+        <HBox spacing="20">
+            <padding>
+                <Insets bottom="15" left="15" right="15" top="15" />
+            </padding>
+
+            <!-- Available & Owned Players Panel -->
+            <VBox spacing="10" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+                <Label style="-fx-font-size: 18px;" text="Available Players" />
+
+                <HBox spacing="10">
+                    <Label text="Filter by:" />
+                    <ComboBox fx:id="clubFilterCombo" promptText="Club" />
+                    <ComboBox fx:id="positionFilterCombo" promptText="Position" />
+                    <ComboBox fx:id="sortCombo" promptText="Sort By">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Price" />
+                                <String fx:value="Rating" />
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+               <Button fx:id="insert_btn" mnemonicParsing="false" onAction="#onInsert" text="insert" />
+               <Button fx:id="update_btn" mnemonicParsing="false" onAction="#onUpdate" text="update" />
+               <Button fx:id="edit_btn" mnemonicParsing="false" onAction="#onEdit" text="edit" />
+               <Button fx:id="add_btn" mnemonicParsing="false" onAction="#onAdd" text="add" />
+                </HBox>
+            <TableView fx:id="transfer_table" prefHeight="312.0" prefWidth="807.0">
+              <columns>
+                <TableColumn fx:id="transfer_name" prefWidth="75.0" text="transer_name" />
+                <TableColumn fx:id="transfer_positon" prefWidth="75.0" text="transfer_position" />
+                  <TableColumn fx:id="transfer_rating" prefWidth="75.0" text="transfer_ratings" />
+                  <TableColumn fx:id="transfer_nation" prefWidth="75.0" text="transfer_nationality" />
+                  <TableColumn fx:id="transfer_left_club" prefWidth="75.0" text="transfer_left_club" />
+                  <TableColumn fx:id="transfer_left_date" prefWidth="75.0" text="trasnsfer_left_date" />
+                  <TableColumn fx:id="transfer_join_club" prefWidth="92.0" text="transfer_joinig_club" />
+                  <TableColumn fx:id="transfer_join_date" prefWidth="58.0" text="transfer_join_date" />
+                  <TableColumn fx:id="transfer_market_value" prefWidth="75.0" text="transfer_market_value" />
+                  <TableColumn fx:id="transfer_trade_type" prefWidth="75.0" text="transfer_trade_type" />
+              </columns>
+            </TableView>
+                <Button fx:id="buyButton" maxWidth="Infinity" text="Buy Player" />
+                <Button fx:id="uploadImageButton" maxWidth="Infinity" text="Upload Image" />
+
+                <Separator />
+
+                <Label style="-fx-font-size: 18px;" text="Owned Players" />
+            <TableView fx:id="transfer_table1" prefHeight="312.0" prefWidth="801.0">
+               <columns>
+                  <TableColumn fx:id="own_name" prefWidth="75.0" text="Name" />
+                  <TableColumn fx:id="own_position" prefWidth="75.0" text="position" />
+                  <TableColumn fx:id="own_ratings" prefWidth="75.0" text="rating" />
+                  <TableColumn fx:id="own_nationlity" prefWidth="75.0" text="Nationality" />
+                  <TableColumn fx:id="ownLeftClub" prefWidth="75.0" text="Left-Club" />
+                  <TableColumn fx:id="own_left_date" prefWidth="75.0" text="left-date" />
+                  <TableColumn fx:id="own_join_club" prefWidth="92.0" text="Joining-Club" />
+                  <TableColumn fx:id="own_join_date" prefWidth="86.0" text="join-date" />
+                  <TableColumn fx:id="market_value" prefWidth="67.0" text="Market-Value" />
+                  <TableColumn fx:id="own_trade" prefWidth="30.0" text="Trade-Type" />
+               </columns>
+            </TableView>
+                <Button fx:id="sellButton" maxWidth="Infinity" text="Sell Player" />
+            </VBox>
+
+            <!-- Player Detail Panel -->
+            <VBox prefHeight="933.0" prefWidth="281.0" spacing="10" style="-fx-background-color: rgba(255,255,255,0.1); -fx-padding: 10;">
+                <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+                <ImageView fx:id="detailImageView" fitHeight="150" fitWidth="150" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/images%20(1).jpeg" />
+               </image></ImageView>
+                <Label fx:id="detailName" style="-fx-font-size: 16px;" text="abc" />
+                <Label fx:id="detailClub" text="abnc" />
+                <Label fx:id="detailPosition" text="abc" />
+                <Label fx:id="detailRating" text="abc" />
+                <Label fx:id="detailPrice" text="abc" />
+                <Label fx:id="detailGoals" text="abc" />
+                <Label fx:id="detailAssists" text="abc" />
+                <Label fx:id="detailMatches" text="abc" />
+            </VBox>
+
+        </HBox>
+    </center>
+
+    <bottom>
+        <HBox prefHeight="44.0" prefWidth="1040.0" spacing="10" BorderPane.alignment="CENTER_RIGHT">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <Label fx:id="budgetLabel" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+        </HBox>
+    </bottom>
+</BorderPane>

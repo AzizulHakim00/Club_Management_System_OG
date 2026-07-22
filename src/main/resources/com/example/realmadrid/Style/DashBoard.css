@@ -1,0 +1,234 @@
+.dashboard {
+    -fx-background-color: #EEEEEE;
+}
+
+.user_name {
+    -fx-font-size: 2.6em;
+    -fx-font-family: "Calibri Light";
+}
+
+.date_lbl {
+    -fx-text-fill: #AAAAAA;
+    -fx-font-size: 1.1em;
+    -fx-font-family: "Calibri Light";
+}
+
+.section_title {
+    -fx-font-size: 1.4em;
+    -fx-font-family: "Calibri Light";
+}
+
+/* Accounts view */
+
+.team_view {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 10 0 0 10;
+    -fx-padding: 10 0 10 0;
+    -fx-alignment: center;
+    -fx-border-width: 0 1 0 0;
+    -fx-border-color: #DDDDDD;
+    -fx-spacing: 10;
+}
+
+
+
+
+.team {
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 10, 0, 0, 10);
+}
+
+.team VBox {
+    -fx-background-color: #FFFFFF;
+}
+
+.team FontAwesomeIconView {
+    -fx-fill: #FFFFFF;
+}
+
+.team Button{
+    -fx-background-color: #0C1325;
+}
+
+ /* changes made */
+.team_gradient {
+    -fx-background-color:  #0C1325;
+}
+
+.team_score{
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: "Calibri";
+    -fx-font-weight: bold;
+}
+
+.team_name {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: "Calibri";
+    -fx-text-alignment: center;
+}
+
+
+
+.summary_view {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 5 10 5 10;
+    -fx-spacing: 5;
+    -fx-alignment: center_left;
+}
+
+.acc_summary_container {
+    -fx-padding: 10;
+    -fx-spacing: 10;
+    -fx-alignment: center_left;
+    -fx-border-radius: 10;
+    -fx-border-color: #999999;
+    -fx-border-width: 1;
+    -fx-border-style: dashed;
+}
+
+.acc_summary_container Line {
+    -fx-stroke: #AAAAAA;
+}
+
+.income_amount {
+    -fx-text-fill: #003087;
+    -fx-font-family: "Calibri Light";
+    -fx-font-size: 1.5em;
+}
+
+.expense_amount {
+    -fx-text-fill: green;
+    -fx-font-family: "Calibri Light";
+    -fx-font-size: 1.5em;
+}
+
+/* transactions view */
+.recent_listview {
+    -fx-background-color: #EEEEEE;
+    -fx-border-width: 0 0 0 2;
+    -fx-border-color: #003087;
+}
+
+.recent_listview .scroll-bar:vertical {
+    -fx-scale-x: 0;
+}
+
+.list-cell {
+    -fx-background-color: #EEEEEE;
+    -fx-padding: 15 0 15 0;
+}
+
+/* send money view */
+
+.table_container {
+    -fx-background-color: #EEEEEE;
+}
+.table_container AnchorPane{
+    -fx-background-color: #AAAAAA;
+}
+
+.table_container Label {
+    -fx-font-family: "Calibri Light";
+}
+
+.table_container TextField {
+    -fx-background-color: #FFFFFF;
+    -fx-font-family: "Calibri Light";
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 3, 0, 0, 3);
+}
+.table_container ChoiceBox {
+    -fx-background-color:  #AAAAAA;
+    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 3, 0, 0, 3);
+    -fx-font-family: "Calibri";
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+}
+
+.table_container Button {
+    -fx-background-color:  #003087;
+    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 3, 0, 0, 3);
+    -fx-font-size: 1.5em;
+    -fx-pref-width: 230;
+    -fx-font-family: "Calibri Light";
+    -fx-text-fill: #FFFFFF;
+}
+
+.table_container Button:hover {
+    -fx-cursor: hand;
+}
+
+/*
+
+.table-view{
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-border-color: linear-gradient(to bottom right, #DCEEFF,#1E90FF );
+    -fx-border-radius: 5px;
+    -fx-border-width: 1.5px;
+}
+.table-view .column-header-background{
+    -fx-background-color: #DCEEFF; /* soft blue */
+    /* -fx-background-color: linear-gradient(to bottom right, #DCEEFF,#1E90FF);
+    -fx-background-radius: 5px 5px 0 0;
+    -fx-background-insets: 0 0 0 0;
+}
+*/
+
+
+.table-view{
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-border-color: #0C1325;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1.5px;
+}
+.table-view .column-header-background{
+    -fx-background-color: #0C1325;
+    -fx-background-radius: 2px 2px 0 0;
+    -fx-background-insets: 0 0 0 0;
+}
+.table-view .column-header, .filter{
+    -fx-background-color: transparent;
+    -fx-size: 40px;
+}
+.table-view .column-header .label{
+    -fx-text-fill: #fff;
+}
+.new_trans_container {
+    -fx-background-color: #F5F9FF; /* very light blue/white */
+    -fx-padding: 20 10 20 10;
+    -fx-spacing: 10;
+    -fx-alignment: center_left;
+}
+
+.new_trans_container Label {
+    -fx-font-family: "Calibri Light";
+    -fx-font-size: 1.3em;
+    -fx-text-fill: #003366; /* Real Madrid dark blue */
+}
+
+.new_trans_container TextField {
+    -fx-pref-height: 40;
+    -fx-background-color: #FFFFFF;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 51, 102, 0.2), 5, 0, 0, 3);
+    -fx-border-color: #00BFFF; /* light sky blue border */
+    -fx-border-width: 1.5;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.new_trans_container Button {
+    -fx-background-color: linear-gradient(to right, #003366, #0059b3); /* dark blue gradient */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 51, 102, 0.4), 5, 0, 0, 3);
+    -fx-font-size: 1.5em;
+    -fx-pref-width: 230;
+    -fx-font-family: "Calibri Light";
+    -fx-text-fill: #FFFFFF;
+    -fx-background-radius: 8;
+}
+
+.new_trans_container Button:hover {
+    -fx-background-color: linear-gradient(to right, #0059b3, #0073e6); /* lighter blue on hover */
+    -fx-cursor: hand;
+}

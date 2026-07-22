@@ -1,0 +1,48 @@
+name: Validate completed original JavaFX project
+
+on:
+  push:
+    branches:
+      - import/validated-club-management-system-20260722
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+
+      - name: Validate original FXML documents
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+
+          files = sorted(Path('src/main/resources').rglob('*.fxml'))
+          if not files:
+              raise SystemExit('No FXML files found')
+          for file in files:
+              ET.parse(file)
+          print(f'Validated {len(files)} original FXML documents')
+          PY
+
+      - name: Test database, load every original screen and package
+        shell: bash
+        run: |
+          chmod +x mvnw
+          xvfb-run -a ./mvnw --batch-mode --no-transfer-progress -DrunFxSmokeTests=true clean test package

@@ -1,0 +1,138 @@
+/* Root pane */
+.root {
+    -fx-font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    -fx-background-color: #1e293b; /* Dark blue-gray background */
+    -fx-text-fill: #e2e8f0; /* Light gray text */
+}
+
+/* Toolbar styling */
+.toolbar {
+    -fx-background-color: #2563eb; /* Bright blue */
+    -fx-padding: 6 12;
+}
+
+.toolbar-label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+/* Buttons in toolbar */
+.toolbar > .button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-weight: 600;
+}
+
+.toolbar > .button:hover {
+    -fx-background-color: #3b82f6;
+}
+
+/* Side pane (player list) */
+.side-pane-compact {
+    -fx-background-color: #334155;
+    -fx-padding: 10;
+    -fx-border-color: #475569;
+    -fx-border-width: 1 0 1 1;
+    -fx-border-style: solid;
+    -fx-spacing: 6;
+}
+
+.section-title-compact {
+    -fx-text-fill: #93c5fd;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 6 0;
+}
+
+/* Player ListView styling */
+.list-view {
+    -fx-background-color: #1e293b;
+    -fx-control-inner-background: #1e293b;
+    -fx-cell-hover-color: #3b82f6;
+    -fx-text-fill: #cbd5e1;
+}
+
+/* Formation Pane - compact & neat */
+.formation-pane-compact {
+    -fx-background-color: #141c2a; /* Dark background */
+    -fx-border-color: #3b82f6;     /* Soft blue border */
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(59,130,246,0.4), 8, 0, 0, 2);
+    -fx-max-width:400 ;
+    -fx-max-height: 420px;
+}
+
+/* Player details pane */
+.details-pane-compact {
+    -fx-background-color: #334155;
+    -fx-padding: 15;
+    -fx-border-color: #475569;
+    -fx-border-width: 1 1 1 0;
+    -fx-border-style: solid;
+    -fx-spacing: 8;
+    -fx-text-fill: #e2e8f0;
+}
+
+.player-image-compact {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 8, 0, 0, 3);
+    -fx-border-radius: 60;
+    -fx-background-radius: 60;
+}
+
+/* Labels in details */
+.field-label {
+    -fx-text-fill: #93c5fd;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+.field-value-compact {
+    -fx-text-fill: #e2e8f0;
+    -fx-font-size: 14px;
+    -fx-padding: 0 0 8 0;
+}
+
+/* Player card style */
+.player-card {
+    -fx-background-color: #1e293b;
+    -fx-border-color: #3b82f6;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 4 6 4 6;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(59,130,246,0.3), 5, 0, 0, 1);
+    -fx-pref-width: 72;
+    -fx-pref-height: 72;
+}
+
+.player-card:hover {
+    -fx-background-color: #3b82f6;
+}
+
+.player-card:selected, .player-card.selected {
+    -fx-border-color: #60a5fa;
+    -fx-background-color: #2563eb;
+}
+
+.image-view {
+    -fx-fit-width: 40;
+    -fx-fit-height: 40;
+    -fx-smooth: true;
+    -fx-preserve-ratio: true;
+}
+
+.player-name {
+    -fx-fill: #e2e8f0;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-text-alignment: center;
+}
+
+.player-position {
+    -fx-fill: #93c5fd;
+    -fx-font-size: 11px;
+    -fx-text-alignment: center;
+}

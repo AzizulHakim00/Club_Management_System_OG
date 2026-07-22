@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="600" prefWidth="850" style="-fx-padding: 10;" stylesheets="@../../Style/TransferpopUp/TransferAllPlayer.css" xmlns="http://javafx.com/javafx/21.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realmadrid.Controller.Couch.TransferAllPopUp.PlayerPerformanceFullController">
+    <children>
+        <ScrollPane fitToWidth="true" prefHeight="580" prefWidth="520" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <content>
+            <HBox>
+               <children>
+                      <VBox prefWidth="501.0" spacing="6">
+                          <padding>
+                              <Insets bottom="10" left="10" right="10" top="10" />
+                          </padding>
+                          <children>
+                              <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Player Performance Full" />
+                              <HBox alignment="CENTER_LEFT" spacing="8">
+                                  <children>
+                                      <Label minWidth="110" text="Player Name:" />
+                                      <TextField fx:id="playerNameField" prefWidth="350" promptText="Enter player name" />
+                                  </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" spacing="8">
+                                  <children>
+                                      <Label minWidth="110" text="Player Club:" />
+                                      <TextField fx:id="playerClubField" prefWidth="224.0" promptText="Enter player club" />
+                                  </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" spacing="8">
+                                  <children>
+                                      <Label minWidth="110" text="nationality" />
+                                      <TextField fx:id="nationalityField" prefWidth="350" />
+                                  </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" spacing="8" />
+                              <HBox alignment="CENTER_LEFT" spacing="8" />
+                        <HBox>
+                           <children>
+                              <Label minWidth="110" text="ApperanceTotal" />
+                              <TextField fx:id="appearancesTotalField" prefWidth="350" />
+                           </children>
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <Label minWidth="110" prefHeight="15.0" prefWidth="166.0" text="Apperance" />
+                              <Label layoutX="10.0" layoutY="10.0" minWidth="110" prefHeight="15.0" prefWidth="206.0" text="Goal" />
+                              <Label layoutX="120.0" layoutY="10.0" minWidth="110" text="Assist" />
+                           </children>
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <Label minWidth="110" text="la liga" />
+                              <TextField fx:id="appearancesLaLigaField" prefWidth="350" />
+                              <Label minWidth="110" text="total" />
+                              <TextField fx:id="goalsLaLigaField" prefWidth="350" />
+                              <Label layoutX="10.0" layoutY="10.0" minWidth="110" text="total" />
+                              <TextField fx:id="assistsLaLigaField" layoutX="120.0" layoutY="10.0" prefWidth="350" />
+                           </children>
+                        </HBox>
+                              <HBox alignment="CENTER_LEFT" spacing="8" />
+                        <HBox>
+                           <children>
+                              <Label minWidth="110" text="Champions League" />
+                              <TextField fx:id="appearancesChampionsField" prefWidth="350" />
+                              <HBox>
+                                 <children>
+                                    <Label minWidth="110" text="total" />
+                                    <TextField fx:id="goalsChampionsField" prefWidth="350" />
+                                 </children>
+                              </HBox>
+                              <Label layoutX="10.0" layoutY="10.0" minWidth="110" text="total" />
+                              <TextField fx:id="assistsChampionsField" layoutX="120.0" layoutY="10.0" prefWidth="350" />
+                           </children>
+                        </HBox>
+                              <HBox alignment="CENTER_LEFT" spacing="8" />
+                              <HBox alignment="CENTER_LEFT" spacing="8">
+                                  <children>
+                                      <HBox alignment="CENTER_LEFT" spacing="8" />
+                                  </children>
+                              </HBox>
+                        <HBox>
+                           <children>
+                              <Label minWidth="110" text="UefaSuperCup" />
+                              <TextField fx:id="appearancesUefaField" prefWidth="350" />
+                              <HBox>
+                                 <children>
+                                    <Label minWidth="110" text="total" />
+                                    <TextField fx:id="goalsUefaField" prefWidth="350.0" />
+                                 </children>
+                              </HBox>
+                              <Label layoutX="10.0" layoutY="10.0" minWidth="110" text="total" />
+                              <TextField fx:id="assistsUefaField" layoutX="120.0" layoutY="10.0" prefWidth="350" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="20.0" layoutY="322.0">
+                           <children>
+                              <Label minWidth="110" text="CopadelRey" />
+                              <TextField fx:id="appearancesCopaField" prefWidth="350" />
+                              <HBox>
+                                 <children>
+                                    <Label minWidth="110" text="total" />
+                                    <TextField fx:id="goalsCopaField" prefWidth="350.0" />
+                                 </children>
+                              </HBox>
+                              <Label layoutX="10.0" layoutY="10.0" minWidth="110" text="total" />
+                              <TextField fx:id="assistsCopaField" layoutX="120.0" layoutY="10.0" prefWidth="350" />
+                           </children>
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <Label minWidth="110" text="totalGoal" />
+                              <TextField fx:id="goalsTotalField" prefWidth="350" />
+                              <Label layoutX="10.0" layoutY="10.0" minWidth="110" text="total Assist" />
+                              <TextField fx:id="assistsTotalField" layoutX="120.0" layoutY="10.0" prefWidth="350" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="20.0" layoutY="384.0">
+                           <children>
+                              <Label minWidth="110" text="Man of the Match" />
+                              <TextField fx:id="manOfMatchField" prefWidth="350" />
+                           </children>
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <Label minWidth="110" text="Average Raing" />
+                              <TextField fx:id="averageRatingField" prefWidth="350" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="20.0" layoutY="447.0">
+                           <children>
+                              <Label minWidth="110" text="SeasonYear" />
+                              <TextField fx:id="seasonYearField" prefWidth="350" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="20.0" layoutY="531.0">
+                           <children>
+                              <Label minWidth="110" text="Image Path:" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="20.0" layoutY="562.0">
+                           <children>
+                              <TextField fx:id="imagePathField" prefHeight="25.0" prefWidth="481.0" promptText="Path to image file" />
+                           </children>
+                        </HBox>
+                          </children>
+                      </VBox>
+               </children>
+            </HBox>
+            </content>
+        </ScrollPane>
+        <VBox prefHeight="580" prefWidth="290" spacing="12" style="-fx-border-color: lightgray; -fx-padding: 10; -fx-background-color: #f9f9f9;" AnchorPane.bottomAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="10">
+            <children>
+                <ImageView fx:id="imageView" fitHeight="150" fitWidth="270" preserveRatio="true" smooth="true" style="-fx-border-color: gray; -fx-border-width: 1;" />
+                <Button maxWidth="270" onAction="#handleUploadImage" text="Upload Image" />
+                <Label style="-fx-font-weight: bold;" text="Connent On Performance" />
+                <TextArea fx:id="medicalDescriptionArea" prefRowCount="8" prefWidth="270" wrapText="true" />
+                <HBox alignment="CENTER_RIGHT" prefWidth="270" spacing="8">
+                    <children>
+                        <Button onAction="#handleInsert" text="Insert" />
+                        <Button onAction="#handleUpdate" text="Update" />
+                        <Button onAction="#handleClear" text="Clear" />
+                    </children>
+                </HBox>
+                <Button onAction="#handleDelete" text="Delete" />
+                <Button onAction="#handleExit" prefHeight="33.0" prefWidth="57.0" style="-fx-background-color: #d9534f; -fx-text-fill: white;" text="Exit" />
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

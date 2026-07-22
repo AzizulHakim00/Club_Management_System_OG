@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="600" prefWidth="850" style="-fx-padding: 10;" stylesheets="@../../Style/TransferpopUp/TransferAllPlayer.css" xmlns="http://javafx.com/javafx/21.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realmadrid.Controller.Couch.TransferAllPopUp.PlayerStatusController">
+
+    <!-- Left: Scrollable form -->
+    <ScrollPane fitToWidth="true" prefHeight="580" prefWidth="520" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+
+        <VBox spacing="6">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+
+            <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Manage Player Status" />
+
+            <!-- Your HBox children remain unchanged -->
+            <HBox alignment="CENTER_LEFT" spacing="8">
+                <Label minWidth="110" text="Player Name:" />
+                <TextField fx:id="playerNameField" prefWidth="350" promptText="Enter player name" />
+            </HBox>
+
+            <HBox alignment="CENTER_LEFT" spacing="8">
+                <Label minWidth="110" text="Player Club:" />
+                <TextField fx:id="playerClubField" prefWidth="224.0" promptText="Enter player club" />
+            </HBox>
+
+            <HBox alignment="CENTER_LEFT" spacing="8">
+                <Label minWidth="110" text="Salary:" />
+                <TextField fx:id="salaryField" prefWidth="350" promptText="e.g. 100000.00" />
+            </HBox>
+
+            <HBox alignment="CENTER_LEFT" spacing="8">
+                <Label minWidth="110" text="Joining Date:" />
+                <DatePicker fx:id="joiningDatePicker" prefWidth="350" />
+            </HBox>
+
+            <HBox alignment="CENTER_LEFT" spacing="8">
+                <Label minWidth="110" text="Leaving Date:" />
+                <DatePicker fx:id="leavingDatePicker" prefWidth="350.0" />
+            </HBox>
+
+            <HBox alignment="CENTER_LEFT" spacing="8">
+                <Label minWidth="110" text="Player Bonus:" />
+                <TextField fx:id="playerBonusField" prefWidth="350" promptText="e.g. 5000.00" />
+            </HBox>
+
+            <HBox alignment="CENTER_LEFT" spacing="8">
+                <Label minWidth="110" text="Medical Status:" />
+                <TextField fx:id="medicalStatusField" prefWidth="350" promptText="Medical condition" />
+            </HBox>
+
+            <HBox alignment="CENTER_LEFT" spacing="8">
+                <Label minWidth="110" text="Leave In Date:" />
+                <DatePicker fx:id="leaveInDatePicker" prefWidth="350" />
+            </HBox>
+
+            <HBox alignment="CENTER_LEFT" spacing="8">
+                <Label minWidth="110" text="Yellow Cards LAL:" />
+                <TextField fx:id="yellowCardsLALField" prefWidth="350" promptText="0" />
+
+                  <HBox alignment="CENTER_LEFT" spacing="8">
+                   <Label minWidth="110" text="Red Cards LAL:" />
+                   <TextField fx:id="redCardsLALField" prefWidth="350" promptText="0" />
+               </HBox>
+            </HBox>
+         <HBox>
+            <children>
+
+                  <HBox alignment="CENTER_LEFT" spacing="8">
+                      <Label minWidth="110" text="Yellow Cards UCL:" />
+                      <TextField fx:id="yellowCardsUCLField" prefWidth="350" promptText="0" />
+                  </HBox>
+
+                        <HBox alignment="CENTER_LEFT" spacing="8">
+                      <Label minWidth="110" text="Red Cards UCL:" />
+                      <TextField fx:id="redCardsUCLField" prefWidth="350" promptText="0" />
+                  </HBox>
+            </children>
+         </HBox>
+         <HBox>
+            <children>
+
+                        <HBox alignment="CENTER_LEFT" spacing="8">
+                      <Label minWidth="110" text="Yellow Cards CDR:" />
+                      <TextField fx:id="yellowCardsCDRField" prefWidth="350" promptText="0" />
+                  </HBox>
+
+                  <HBox alignment="CENTER_LEFT" spacing="8">
+                      <Label minWidth="110" text="Red Cards CDR:" />
+                      <TextField fx:id="redCardsCDRField" prefWidth="350" promptText="0" />
+                  </HBox>
+            </children>
+         </HBox>
+         <HBox>
+            <children>
+
+                  <HBox alignment="CENTER_LEFT" spacing="8">
+                      <Label minWidth="110" text="Yellow Cards USC:" />
+                      <TextField fx:id="yellowCardsUSCField" prefWidth="350" promptText="0" />
+                  </HBox>
+
+                  <HBox alignment="CENTER_LEFT" spacing="8">
+                      <Label minWidth="110" text="Red Cards USC:" />
+                      <TextField fx:id="redCardsUSCField" prefWidth="350" promptText="0" />
+                  </HBox>
+            </children>
+         </HBox>
+
+            <HBox alignment="CENTER_LEFT" spacing="8">
+                <Label minWidth="110" text="Miss Upcoming Games:" />
+                <TextField fx:id="missUpcomingGamesField" prefWidth="350" promptText="0" />
+            </HBox>
+         <HBox>
+            <children>
+
+                        <HBox alignment="CENTER_LEFT" spacing="8">
+                      <Label minWidth="67.0" prefHeight="17.0" prefWidth="67.0" text="Miss LAL:" />
+                      <TextField fx:id="missLALField" prefWidth="350.0" promptText="0" />
+                  </HBox>
+
+                        <HBox alignment="CENTER_LEFT" spacing="8">
+                      <Label minWidth="54.0" prefHeight="17.0" prefWidth="54.0" text="Miss UCL:" />
+                      <TextField fx:id="missUCLField" prefWidth="350" promptText="0" />
+                  </HBox>
+
+                        <HBox alignment="CENTER_LEFT" spacing="8">
+                      <Label minWidth="64.0" prefHeight="17.0" prefWidth="64.0" text="Miss CDR:" />
+                      <TextField fx:id="missCDRField" prefWidth="350" promptText="0" />
+                  </HBox>
+
+                        <HBox alignment="CENTER_LEFT" spacing="8">
+                      <Label minWidth="63.0" prefHeight="17.0" prefWidth="63.0" text="Miss USC:" />
+                      <TextField fx:id="missUSCField" prefWidth="350" promptText="0" />
+                  </HBox>
+            </children>
+         </HBox>
+
+            <HBox alignment="CENTER_LEFT" spacing="8">
+                <Label minWidth="110" text="Image Path:" />
+                <TextField fx:id="imagePathField" prefWidth="350" promptText="Path to image file" />
+            </HBox>
+
+        </VBox>
+    </ScrollPane>
+
+    <!-- Right side: Image + Medical Desc + Buttons -->
+    <VBox prefHeight="580" prefWidth="290" spacing="12" style="-fx-border-color: lightgray; -fx-padding: 10; -fx-background-color: #f9f9f9;" AnchorPane.bottomAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="10">
+
+        <!-- Image preview -->
+        <ImageView fx:id="imageView" fitHeight="150" fitWidth="270" preserveRatio="true" smooth="true" style="-fx-border-color: gray; -fx-border-width: 1;" />
+
+        <!-- Upload Button -->
+        <Button maxWidth="270" onAction="#handleUploadImage" text="Upload Image" />
+
+        <!-- Medical Description -->
+        <Label style="-fx-font-weight: bold;" text="Medical Description:" />
+        <TextArea fx:id="medicalDescriptionArea" prefRowCount="8" prefWidth="270" wrapText="true" />
+
+        <!-- Buttons -->
+        <HBox alignment="CENTER_RIGHT" prefWidth="270" spacing="8">
+            <Button onAction="#handleInsert" text="Insert" />
+            <Button onAction="#handleUpdate" text="Update" />
+            <Button onAction="#handleClear" text="Clear" />
+        </HBox>
+         <Button onAction="#handleDelete" text="Delete" />
+         <Button onAction="#handleExit" prefHeight="33.0" prefWidth="57.0" style="-fx-background-color: #d9534f; -fx-text-fill: white;" text="Exit" />
+
+    </VBox>
+
+</AnchorPane>
