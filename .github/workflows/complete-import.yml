@@ -28,9 +28,7 @@ jobs:
         run: |
           cat \
             .bootstrap/part-000 \
-            .bootstrap/part-0010 \
-            .bootstrap/part-0011 \
-            .bootstrap/part-0012 \
+            .bootstrap-fix/part-001-* \
             .bootstrap/part-002 \
             .bootstrap/part-0030 \
             .bootstrap/part-0031 \
@@ -42,6 +40,7 @@ jobs:
             > /tmp/project.tar.xz.b64
           test "$(wc -c < /tmp/project.tar.xz.b64)" -eq 94920
           base64 --decode /tmp/project.tar.xz.b64 > /tmp/project.tar.xz
+          test "$(wc -c < /tmp/project.tar.xz)" -eq 71188
           echo "58ef727caaffae1e5635113299edd23e3e8ef6e8448f824b091a55ebbf2047ef  /tmp/project.tar.xz" | sha256sum --check --strict
 
       - name: Replace temporary transfer files with project source
